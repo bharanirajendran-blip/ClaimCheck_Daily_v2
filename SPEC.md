@@ -65,7 +65,7 @@ GPT-4o acts as a high-level Director and independent Verifier. Claude acts as a 
 - Chunk-type boost: `raw_source` × 1.15, `summary` × 0.95, `source_metadata` × 0.75
 - Same-claim boost: chunks matching the current `claim_id` score × 1.25 to further favour claim-local evidence
 - `_diversify_hits()` applies two diversity axes: kind-bias (up to 4 raw source chunks) and domain-diversity (prefer chunks from distinct source domains so verdicts rest on multiple independent sources, not one article)
-- The retriever supplies ranked hits; final retrieval behavior is orchestrated in `pipeline.py` as claim-local-first with cumulative-store fallback (see below)
+- The retriever supplies ranked hits; `pipeline.py` orchestrates final retrieval as claim-local-first with cumulative-store fallback, so ranking and cross-run admission stay separate concerns
 - **Claim-local-first retrieval** (`agent/pipeline.py`): the retrieve node runs two searches — first over same-claim chunks only, then over the full cumulative store. Local hits fill slots unconditionally; fallback cross-run hits are only accepted if their `hybrid_score ≥ 0.2`, preventing weak cross-claim vocabulary matches from contaminating unrelated verdicts
 - Any chunk whose text begins with `"Error fetching page"` is excluded from retrieved evidence (retroactive guard for any error chunks already in the store)
 
