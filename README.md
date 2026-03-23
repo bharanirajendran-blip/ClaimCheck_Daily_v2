@@ -161,7 +161,8 @@ python run.py --dry-run
 python run.py
 
 # 6. Test a specific claim without feed harvesting
-python run.py --claim "The moon is made of cheese"
+# Automatically writes to docs_manual/ + outputs_manual/ — daily docs/ is never touched
+python run.py --claim "Apollo 11 landed on the Moon in 1969."
 ```
 
 ### Optional flags

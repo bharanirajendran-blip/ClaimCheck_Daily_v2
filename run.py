@@ -3,7 +3,8 @@
 ClaimCheck Daily — CLI entry point
 ------------------------------------
 Usage:
-    python run.py                          # run with defaults
+    python run.py                          # daily feed run → docs/ + outputs/
+    python run.py --claim "some claim"     # single-claim run → docs_manual/ + outputs_manual/
     python run.py --feeds my_feeds.yaml    # custom feed file
     python run.py --log-level DEBUG        # verbose output
     python run.py --dry-run                # harvest + select, skip research
@@ -38,13 +39,13 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument(
         "--docs-dir",
-        default="docs",
-        help="Output directory for GitHub Pages HTML (default: docs)",
+        default=None,
+        help="Output directory for GitHub Pages HTML (default: docs, or docs_manual with --claim)",
     )
     p.add_argument(
         "--outputs-dir",
-        default="outputs",
-        help="Output directory for JSON results (default: outputs)",
+        default=None,
+        help="Output directory for JSON results (default: outputs, or outputs_manual with --claim)",
     )
     p.add_argument(
         "--log-level",
@@ -72,6 +73,18 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+
+    # Auto-separate output paths for manual claim runs so daily outputs are never overwritten
+    if args.claim:
+        if args.docs_dir is None:
+            args.docs_dir = "docs_manual"
+        if args.outputs_dir is None:
+            args.outputs_dir = "outputs_manual"
+    else:
+        if args.docs_dir is None:
+            args.docs_dir = "docs"
+        if args.outputs_dir is None:
+            args.outputs_dir = "outputs"
 
     if args.dry_run:
         # Lightweight check — just show what would be selected
