@@ -1,0 +1,22 @@
+# Environment & secrets
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Generated outputs (tracked intentionally — do not ignore)
+# docs/          ← keep: GitHub Pages source
+# outputs/       ← keep: JSON archive

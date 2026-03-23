@@ -1,0 +1,185 @@
+"""
+store.py — Persistent Evidence Store (Week 4: Knowledge Representation)
+
+Responsibilities:
+  1. Receive a ResearchResult from the Claude Researcher
+  2. Chunk the findings text into overlapping section windows
+  3. Save chunks to a daily JSON file  (outputs/evidence_YYYY-MM-DD.json)
+  4. Merge them into a cumulative store (outputs/evidence_store.json)
+     so future runs can retrieve evidence from past claims
+
+Why persistent across runs?
+  A single daily run yields 3 claims and ~15-30 chunks.
+  After a week of runs, the store holds 100+ chunks spanning multiple
+  topics and sources — retrieval becomes genuinely non-trivial and the
+  system starts showing "context management" across time, not just
+  within a single day (the key Week 4 concept).
+
+Chunking strategy:
+  - Split findings by markdown section headings (## ...)
+  - Hard-cap each chunk at 700 chars (keeps context tight)
+  - Preserve section label so the Director can cite it precisely
+"""
+
+from __future__ import annotations
+
+import hashlib
+import json
+import logging
+import re
+from pathlib import Path
+from datetime import datetime, timezone
+
+from .models import EvidenceChunk, ResearchResult
+
+logger = logging.getLogger(__name__)
+
+CUMULATIVE_STORE_FILE = "evidence_store.json"
+MAX_CHUNK_CHARS = 700
+
+
+# ── Public API ─────────────────────────────────────────────────────────────────
+
+def store_research(
+    research: ResearchResult,
+    claim_text: str,
+    outputs_dir: str | Path,
+) -> list[EvidenceChunk]:
+    """
+    Chunk a ResearchResult and persist to both the daily and cumulative store.
+    Returns the list of EvidenceChunk objects created.
+    """
+    outputs_path = Path(outputs_dir)
+    outputs_path.mkdir(parents=True, exist_ok=True)
+
+    date_slug = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    chunks = _chunk_research(research, claim_text, date_slug)
+
+    # Write / append to daily evidence file
+    daily_path = outputs_path / f"evidence_{date_slug}.json"
+    _upsert_json_list(daily_path, [c.model_dump() for c in chunks])
+
+    # Merge into cumulative store (deduplicated by chunk_id)
+    cumulative_path = outputs_path / CUMULATIVE_STORE_FILE
+    _upsert_cumulative(cumulative_path, chunks)
+
+    logger.info(
+        "[store] Stored %d chunks for claim %s → %s",
+        len(chunks), research.claim_id, cumulative_path,
+    )
+    return chunks
+
+
+def load_all_chunks(outputs_dir: str | Path) -> list[EvidenceChunk]:
+    """Load every chunk from the cumulative store. Returns [] if store is empty."""
+    path = Path(outputs_dir) / CUMULATIVE_STORE_FILE
+    if not path.exists():
+        return []
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return [EvidenceChunk.model_validate(r) for r in raw]
+
+
+# ── Chunking ───────────────────────────────────────────────────────────────────
+
+def _chunk_research(
+    research: ResearchResult,
+    claim_text: str,
+    date_slug: str,
+) -> list[EvidenceChunk]:
+    chunks: list[EvidenceChunk] = []
+
+    # Determine primary source URL (first source if any, else empty)
+    primary_url = research.sources[0].get("url", "") if research.sources else ""
+
+    # Split findings into (section_heading, body) pairs
+    sections = _split_sections(research.findings)
+
+    for heading, body in sections:
+        body = body.strip()
+        if not body:
+            continue
+        # Hard-cap and create chunk
+        text = body[:MAX_CHUNK_CHARS]
+        chunk_id = _make_id(research.claim_id, heading, text)
+        chunks.append(EvidenceChunk(
+            chunk_id=chunk_id,
+            claim_id=research.claim_id,
+            claim_text=claim_text[:200],
+            source_url=primary_url,
+            section=heading,
+            text=text,
+            date_slug=date_slug,
+        ))
+
+    # Also store each cited source as a lightweight chunk (for graph edges)
+    for src in research.sources:
+        title = src.get("title", "")
+        url   = src.get("url", "")
+        rel   = src.get("reliability", "")
+        if not title:
+            continue
+        text = f"Source: {title}. URL: {url}. Reliability: {rel}."
+        chunk_id = _make_id(research.claim_id, "Key Sources", text)
+        chunks.append(EvidenceChunk(
+            chunk_id=chunk_id,
+            claim_id=research.claim_id,
+            claim_text=claim_text[:200],
+            source_url=url,
+            section="Key Sources",
+            text=text,
+            date_slug=date_slug,
+        ))
+
+    return chunks
+
+
+def _split_sections(text: str) -> list[tuple[str, str]]:
+    """Split markdown text into (heading, body) pairs at ## headings."""
+    pieces: list[tuple[str, str]] = []
+    current_heading = "Overview"
+    current_lines: list[str] = []
+
+    for line in text.splitlines():
+        if line.startswith("#"):
+            if current_lines:
+                pieces.append((current_heading, "\n".join(current_lines)))
+            current_heading = line.lstrip("#").strip() or "Overview"
+            current_lines = []
+        else:
+            current_lines.append(line)
+
+    if current_lines:
+        pieces.append((current_heading, "\n".join(current_lines)))
+
+    return [(h, b) for h, b in pieces if b.strip()]
+
+
+def _make_id(claim_id: str, section: str, text: str) -> str:
+    raw = f"{claim_id}::{section}::{text[:80]}"
+    return hashlib.md5(raw.encode()).hexdigest()[:12]
+
+
+# ── Persistence helpers ────────────────────────────────────────────────────────
+
+def _upsert_json_list(path: Path, new_items: list[dict]) -> None:
+    existing: list[dict] = []
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+    existing.extend(new_items)
+    path.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def _upsert_cumulative(path: Path, new_chunks: list[EvidenceChunk]) -> None:
+    """Merge new chunks into the cumulative store, deduplicating by chunk_id."""
+    existing: dict[str, dict] = {}
+    if path.exists():
+        for item in json.loads(path.read_text(encoding="utf-8")):
+            existing[item["chunk_id"]] = item
+
+    for chunk in new_chunks:
+        existing[chunk.chunk_id] = chunk.model_dump()
+
+    path.write_text(
+        json.dumps(list(existing.values()), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )

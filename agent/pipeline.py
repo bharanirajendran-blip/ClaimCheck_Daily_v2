@@ -1,0 +1,378 @@
+"""
+Pipeline — LangGraph StateGraph orchestration
+----------------------------------------------
+Graph nodes (extended topology):
+
+  harvest_node       → parse feeds.yaml → state.candidates
+  select_node        → Director (GPT) picks top claims → state.selected
+  research_node      → Researcher (Claude) investigates each claim
+  store_evidence_node → chunk & persist ResearchResults → evidence store
+  graph_context_node  → query knowledge graph → cross-run context strings
+  retrieve_node       → HybridRetriever (TF-IDF + BM25) → state.retrieval_hits
+  verdict_node        → Director synthesises Verdict grounded in retrieved hits
+  verify_node         → LLM-as-a-Judge evaluates verdict quality (RAGAS rubric)
+  revise_query_node   → refine retrieval query from verifier's missing_citations
+  publish_node        → Publisher writes docs/ HTML + outputs/ JSON
+
+Retry loop (self-correcting generation):
+  verify_node → should_retry_verdict → revise_query_node → retrieve_node
+  Loop exits after 2 retries or when verifier scores pass threshold.
+
+State is a Pydantic PipelineState model — every transition is validated.
+"""
+
+from __future__ import annotations
+
+import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+from typing import Any
+
+from langgraph.graph import END, START, StateGraph
+
+from .director import Director
+from .feeds import harvest_claims
+from .graph import get_related_context, update_graph
+from .models import DailyReport, PipelineState, ResearchResult
+from .publisher import Publisher
+from .researcher import Researcher
+from .retriever import HybridRetriever, build_retrieval_query
+from .store import load_all_chunks, store_research
+from .utils import setup_logging
+from .verifier import verify_verdict
+
+logger = logging.getLogger(__name__)
+
+# Lazily-initialised singletons — not created until first node call,
+# so API keys are guaranteed to be loaded from .env before instantiation.
+_director:   Director   | None = None
+_researcher: Researcher | None = None
+
+
+def _get_director() -> Director:
+    global _director
+    if _director is None:
+        _director = Director()
+    return _director
+
+
+def _get_researcher() -> Researcher:
+    global _researcher
+    if _researcher is None:
+        _researcher = Researcher()
+    return _researcher
+
+
+# ── Node functions ────────────────────────────────────────────────────────────
+
+def harvest_node(state: PipelineState) -> dict[str, Any]:
+    """Node 1 — ingest RSS/Atom feeds and populate candidate claims."""
+    logger.info("[harvest] Parsing feeds from %s…", state.feeds_path)
+    candidates = harvest_claims(state.feeds_path)
+    logger.info("[harvest] %d candidate claims harvested.", len(candidates))
+    return {"candidates": candidates}
+
+
+def select_node(state: PipelineState) -> dict[str, Any]:
+    """Node 2 — Director (GPT) scores and selects the day's best claims."""
+    if not state.candidates:
+        logger.warning("[select] No candidates to select from.")
+        return {"selected": []}
+    selected = _get_director().select_claims(state.candidates)
+    logger.info("[select] Director chose %d claims.", len(selected))
+    return {"selected": selected}
+
+
+def research_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 3 — Researcher (Claude) investigates each selected claim in parallel.
+    Uses ThreadPoolExecutor for fan-out; results collected into research_results dict.
+    """
+    if not state.selected:
+        logger.warning("[research] No claims to research.")
+        return {"research_results": {}}
+
+    results: dict[str, ResearchResult] = {}
+    with ThreadPoolExecutor(max_workers=state.max_workers) as pool:
+        futures = {pool.submit(_get_researcher().research, claim): claim for claim in state.selected}
+        for future in as_completed(futures):
+            claim = futures[future]
+            try:
+                results[claim.id] = future.result()
+                logger.info("[research] Completed claim %s.", claim.id)
+            except Exception as exc:
+                logger.error("[research] Failed claim %s: %s", claim.id, exc)
+
+    return {"research_results": results}
+
+
+def store_evidence_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 4 — Chunk each ResearchResult and persist to evidence store.
+    Writes outputs/evidence_YYYY-MM-DD.json (daily) and
+    outputs/evidence_store.json (cumulative, deduplicated).
+    """
+    evidence_chunks: dict[str, list] = {}
+    for claim in state.selected:
+        research = state.research_results.get(claim.id)
+        if not research:
+            continue
+        try:
+            chunks = store_research(research, claim.text, state.outputs_dir)
+            evidence_chunks[claim.id] = chunks
+            logger.info("[store_evidence] %d chunks stored for claim %s", len(chunks), claim.id)
+        except Exception as exc:
+            logger.error("[store_evidence] Failed for claim %s: %s", claim.id, exc)
+    return {"evidence_chunks": evidence_chunks}
+
+
+def graph_context_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 5 — Query the persistent knowledge graph for cross-run context.
+    For each claim, does a depth-2 traversal to find related past claims
+    that share source domains. Context is injected into retrieval queries.
+    """
+    # Update graph with today's newly stored chunks
+    all_new_chunks = [c for chunks in state.evidence_chunks.values() for c in chunks]
+    if all_new_chunks:
+        try:
+            update_graph(all_new_chunks, state.outputs_dir)
+        except Exception as exc:
+            logger.warning("[graph_context] Graph update failed: %s", exc)
+
+    graph_context: dict[str, str] = {}
+    for claim in state.selected:
+        try:
+            ctx = get_related_context(claim.text, claim.id, state.outputs_dir)
+            if ctx:
+                graph_context[claim.id] = ctx
+                logger.info("[graph_context] Context found for claim %s (%d chars)", claim.id, len(ctx))
+        except Exception as exc:
+            logger.warning("[graph_context] Failed for claim %s: %s", claim.id, exc)
+    return {"graph_context": graph_context}
+
+
+def retrieve_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 6 — HybridRetriever ranks all cumulative evidence chunks per claim.
+    Combines TF-IDF cosine (60%) + BM25 keyword (40%), both min-max normalised.
+    Uses graph_context to enrich retrieval queries across prior runs.
+    """
+    all_chunks = load_all_chunks(state.outputs_dir)
+    if not all_chunks:
+        logger.warning("[retrieve] Evidence store empty — skipping retrieval.")
+        return {"retrieval_hits": {}}
+
+    retriever = HybridRetriever(all_chunks)
+    retrieval_hits: dict[str, list] = {}
+
+    for claim in state.selected:
+        graph_ctx = state.graph_context.get(claim.id, "")
+        # On retry, the revised query is stored in graph_context with a special key
+        revised_query = state.graph_context.get(f"{claim.id}::revised_query", "")
+        query_text = revised_query if revised_query else claim.text
+        query = build_retrieval_query(query_text, graph_ctx)
+        try:
+            hits = retriever.search(query, top_k=6)
+            retrieval_hits[claim.id] = hits
+            logger.info(
+                "[retrieve] %d hits for claim %s (top score: %.3f)",
+                len(hits), claim.id, hits[0].hybrid_score if hits else 0.0,
+            )
+        except Exception as exc:
+            logger.error("[retrieve] Failed for claim %s: %s", claim.id, exc)
+
+    return {"retrieval_hits": retrieval_hits}
+
+
+def verdict_node(state: PipelineState) -> dict[str, Any]:
+    """Node 7 — Director (GPT) synthesises a structured Verdict per claim.
+    Passes retrieval_hits so the Director can ground its verdict in
+    the top-ranked evidence chunks (RAG-augmented generation).
+    """
+    verdicts = []
+    for claim in state.selected:
+        research = state.research_results.get(claim.id)
+        if not research:
+            logger.warning("[verdict] No research for claim %s — skipping.", claim.id)
+            continue
+        hits = state.retrieval_hits.get(claim.id, [])
+        logger.info("[verdict] Findings preview for %s: %s", claim.id, research.findings[:300])
+        try:
+            verdict = _get_director().synthesize_verdict(claim, research, hits)
+            verdicts.append(verdict)
+            logger.info("[verdict] %s → %s (%.0f%%)", claim.id, verdict.verdict, verdict.confidence * 100)
+        except Exception as exc:
+            logger.error("[verdict] Failed for claim %s: %s", claim.id, exc)
+    return {"verdicts": verdicts}
+
+
+def verify_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 8 — LLM-as-a-Judge: a separate GPT-4o call evaluates each verdict
+    against the retrieved evidence using a RAGAS-style rubric.
+    Sets should_retry=True on any verdict scoring below threshold.
+    """
+    verifier_reports: dict[str, Any] = dict(state.verifier_reports)
+    for verdict in state.verdicts:
+        claim_id = verdict.claim_id
+        hits = state.retrieval_hits.get(claim_id, [])
+        claim_text = next((c.text for c in state.selected if c.id == claim_id), "")
+        try:
+            report = verify_verdict(claim_text, verdict, hits)
+            verifier_reports[claim_id] = report
+            logger.info(
+                "[verify] claim=%s overall=%.2f retry=%s",
+                claim_id, report.overall_score, report.should_retry,
+            )
+        except Exception as exc:
+            logger.error("[verify] Failed for claim %s: %s", claim_id, exc)
+    return {"verifier_reports": verifier_reports}
+
+
+def revise_query_node(state: PipelineState) -> dict[str, Any]:
+    """
+    Node 9 — Build refined retrieval queries from verifier missing_citations.
+    Appended back into graph_context under a special key so retrieve_node
+    can pick them up on the next iteration. Increments retry_counts.
+    """
+    graph_context = dict(state.graph_context)
+    retry_counts  = dict(state.retry_counts)
+
+    for report_id, report in state.verifier_reports.items():
+        if not report.should_retry:
+            continue
+        retry_counts[report_id] = retry_counts.get(report_id, 0) + 1
+        claim_text = next(
+            (c.text for c in state.selected if c.id == report_id), ""
+        )
+        # Build a targeted query from the verifier's missing citation hints
+        hint_text = " ".join(report.missing_citations[:3])
+        refined = f"{claim_text} {hint_text}".strip()
+        graph_context[f"{report_id}::revised_query"] = refined
+        logger.info(
+            "[revise_query] Refined query for claim %s (retry #%d): %s",
+            report_id, retry_counts[report_id], refined[:120],
+        )
+
+    return {"graph_context": graph_context, "retry_counts": retry_counts}
+
+
+def publish_node(state: PipelineState) -> dict[str, Any]:
+    """Node 10 — Publisher renders HTML to docs/ and JSON to outputs/.
+    Passes verifier_reports and retrieval_hits into DailyReport so the
+    HTML template can surface quality scores alongside each verdict.
+    """
+    report = _get_director().build_report(
+        state.verdicts,
+        state.selected,
+        retrieval_hits=state.retrieval_hits,
+        verifier_reports=state.verifier_reports,
+    )
+    Publisher(docs_dir=state.docs_dir, outputs_dir=state.outputs_dir).publish(report)
+    logger.info("[publish] Report written → %s/%s.html", state.docs_dir, report.date_slug)
+    return {"report": report}
+
+
+# ── Conditional edges ─────────────────────────────────────────────────────────
+
+MAX_RETRIES = 2
+
+
+def should_continue(state: PipelineState) -> str:
+    return "end" if not state.candidates else "select"
+
+
+def should_research(state: PipelineState) -> str:
+    return "end" if not state.selected else "research"
+
+
+def should_retry_verdict(state: PipelineState) -> str:
+    """
+    After verify_node: route to revise_query if any verdict needs a retry
+    AND we haven't exhausted MAX_RETRIES. Otherwise route to publish.
+    """
+    for report_id, report in state.verifier_reports.items():
+        if report.should_retry:
+            retries_so_far = state.retry_counts.get(report_id, 0)
+            if retries_so_far < MAX_RETRIES:
+                logger.info(
+                    "[router] Retry triggered for claim %s (attempt %d/%d)",
+                    report_id, retries_so_far + 1, MAX_RETRIES,
+                )
+                return "revise"
+    return "publish"
+
+
+# ── Graph construction ────────────────────────────────────────────────────────
+
+def build_graph() -> StateGraph:
+    """Construct and compile the ClaimCheck Daily LangGraph."""
+    graph = StateGraph(PipelineState)
+
+    # Original nodes (untouched logic)
+    graph.add_node("harvest",        harvest_node)
+    graph.add_node("select",         select_node)
+    graph.add_node("research",       research_node)
+
+    # New RAG + verification nodes
+    graph.add_node("store_evidence", store_evidence_node)
+    graph.add_node("graph_context",  graph_context_node)
+    graph.add_node("retrieve",       retrieve_node)
+    graph.add_node("verdict",        verdict_node)
+    graph.add_node("verify",         verify_node)
+    graph.add_node("revise_query",   revise_query_node)
+    graph.add_node("publish",        publish_node)
+
+    # Linear spine
+    graph.add_edge(START, "harvest")
+    graph.add_conditional_edges(
+        "harvest", should_continue, {"select": "select", "end": END}
+    )
+    graph.add_conditional_edges(
+        "select", should_research, {"research": "research", "end": END}
+    )
+    graph.add_edge("research",       "store_evidence")
+    graph.add_edge("store_evidence", "graph_context")
+    graph.add_edge("graph_context",  "retrieve")
+    graph.add_edge("retrieve",       "verdict")
+    graph.add_edge("verdict",        "verify")
+
+    # Self-correcting loop: verify → (revise → retrieve → verdict → verify) or publish
+    graph.add_conditional_edges(
+        "verify",
+        should_retry_verdict,
+        {"revise": "revise_query", "publish": "publish"},
+    )
+    graph.add_edge("revise_query",   "retrieve")
+
+    graph.add_edge("publish",        END)
+
+    return graph.compile()
+
+
+# ── Public entry point ────────────────────────────────────────────────────────
+
+def run_pipeline(
+    feeds_path:  str | Path = "feeds.yaml",
+    docs_dir:    str | Path = "docs",
+    outputs_dir: str | Path = "outputs",
+    max_workers: int = 3,
+    log_level:   str = "INFO",
+) -> DailyReport:
+    """Compile and invoke the LangGraph; return the final DailyReport."""
+    setup_logging(log_level)
+    logger.info("=== ClaimCheck Daily pipeline starting (LangGraph) ===")
+
+    initial_state = PipelineState(
+        feeds_path=str(feeds_path),
+        docs_dir=str(docs_dir),
+        outputs_dir=str(outputs_dir),
+        max_workers=max_workers,
+    )
+
+    final_state = build_graph().invoke(initial_state)
+    # LangGraph returns a dict; extract the report safely
+    report = (final_state.get("report") if isinstance(final_state, dict) else final_state.report) or DailyReport()
+    logger.info("=== Pipeline complete — %d verdicts ===", len(report.verdicts))
+    return report

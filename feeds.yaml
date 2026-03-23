@@ -1,0 +1,53 @@
+# feeds.yaml — RSS/Atom sources for ClaimCheck Daily
+#
+# Each feed entry:
+#   name:     human-readable label (used as "source" in reports)
+#   url:      RSS or Atom feed URL
+#   category: optional tag for filtering (news | science | politics | health)
+#   enabled:  set to false to skip without deleting the entry
+
+feeds:
+  # --- Major wire services ---
+  - name: AP News — Top Headlines
+    url: https://feeds.apnews.com/rss/apf-topnews
+    category: news
+    enabled: true
+
+  - name: Reuters — Top News
+    url: https://feeds.reuters.com/reuters/topNews
+    category: news
+    enabled: true
+
+  # --- Politics & policy ---
+  - name: PolitiFact — Latest
+    url: https://www.politifact.com/rss/all.xml
+    category: politics
+    enabled: true
+
+  - name: FactCheck.org
+    url: https://www.factcheck.org/feed/
+    category: politics
+    enabled: true
+
+  # --- Science & health ---
+  - name: Science Daily — Top Science
+    url: https://www.sciencedaily.com/rss/top/science.xml
+    category: science
+    enabled: true
+
+  - name: WHO — News
+    url: https://www.who.int/rss-feeds/news-english.xml
+    category: health
+    enabled: true
+
+  # --- Tech ---
+  - name: MIT Technology Review
+    url: https://www.technologyreview.com/feed/
+    category: technology
+    enabled: true
+
+# Pipeline settings applied to all feeds
+settings:
+  max_per_feed: 10          # max entries to read per feed per run
+  max_claims_per_day: 5     # forwarded to Director; overrides agent default
+  research_workers: 3       # parallel Claude researcher threads

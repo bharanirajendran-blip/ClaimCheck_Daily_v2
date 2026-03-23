@@ -1,0 +1,39 @@
+# ClaimCheck Daily — Python dependencies
+# Install with: pip install -r requirements.txt
+
+# ── AI SDKs ──────────────────────────────────────────────
+anthropic>=0.40.0          # Claude Researcher (extended thinking support)
+openai>=1.50.0             # GPT Director (json_object response format)
+
+# ── Orchestration ─────────────────────────────────────────
+langgraph>=0.2.0           # StateGraph pipeline orchestration
+langchain-core>=0.3.0      # Required by LangGraph
+
+# ── Data validation ───────────────────────────────────────
+pydantic>=2.7.0            # BaseModel for all data models + PipelineState
+
+# ── Feed parsing ─────────────────────────────────────────
+feedparser>=6.0.11         # RSS / Atom ingestion
+
+# ── Config & env ─────────────────────────────────────────
+python-dotenv>=1.0.0       # Load .env automatically
+pyyaml>=6.0.2              # Parse feeds.yaml
+
+# ── HTTP ─────────────────────────────────────────────────
+requests>=2.32.0
+httpx>=0.27.0
+beautifulsoup4>=4.12.0     # HTML parsing for fetch_url tool
+
+# ── RAG + Retrieval (Assignment 2) ───────────────────────
+scikit-learn>=1.5.0        # TF-IDF vectoriser (HybridRetriever vector channel)
+numpy>=1.26.0              # Array ops for cosine similarity + min-max normalisation
+networkx>=3.3              # Knowledge graph (GraphRAG)
+
+# ── Utilities ────────────────────────────────────────────
+python-dateutil>=2.9.0     # Robust date parsing for feed entries
+
+# ── Dev / testing (optional) ─────────────────────────────
+pytest>=8.0.0
+pytest-mock>=3.14.0
+responses>=0.25.0          # Mock HTTP in tests
+ruff>=0.6.0                # Linting + formatting

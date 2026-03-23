@@ -1,0 +1,71 @@
+# .github/workflows/daily.yml
+# Runs ClaimCheck Daily every morning and publishes to GitHub Pages
+
+name: ClaimCheck Daily
+
+on:
+  schedule:
+    - cron: "0 8 * * *"   # 08:00 UTC every day
+  workflow_dispatch:       # allow manual trigger from Actions tab
+
+permissions:
+  contents: write          # needed to git-push the generated docs/
+  pages: write
+  id-token: write
+
+jobs:
+  fact-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      # ── Checkout ─────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so we can push back
+
+      # ── Python setup ─────────────────────────────────────────────────
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # ── Run pipeline ─────────────────────────────────────────────────
+      - name: Run ClaimCheck Daily pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LOG_LEVEL: INFO
+        run: python run.py
+
+      # ── Commit generated files back to repo ──────────────────────────
+      - name: Commit and push generated pages
+        run: |
+          git config user.name  "ClaimCheck Bot"
+          git config user.email "claimcheck-bot@users.noreply.github.com"
+          git add docs/ outputs/
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "chore: publish $(date -u '+%Y-%m-%d') report [skip ci]"
+          git push
+
+      # ── Deploy to GitHub Pages ────────────────────────────────────────
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+  deploy:
+    needs: fact-check
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
