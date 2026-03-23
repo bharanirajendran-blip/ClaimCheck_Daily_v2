@@ -48,6 +48,7 @@ GPT-4o acts as a high-level Director and independent Verifier. Claude acts as a 
   - `summary` — Claude's structured analysis sections (supporting context)
   - `source_metadata` — source titles, URLs, and reliability notes (for citations and graph edges)
 - Persists to `outputs/evidence_YYYY-MM-DD.json` (daily) and `outputs/evidence_store.json` (cumulative, deduplicated by `chunk_id`)
+- Skips saving fetched pages whose content begins with `"Error fetching page"` (HTTP 404/401 failures) — only real article content is stored
 - Accumulates across runs so retrieval improves over time
 
 **Knowledge Graph (`agent/graph.py`)**
@@ -57,12 +58,15 @@ GPT-4o acts as a high-level Director and independent Verifier. Claude acts as a 
 - `get_related_context()` does a depth-2 traversal to find past claims sharing the same source domains — context is prepended to retrieval queries (GraphRAG)
 
 **HybridRetriever (`agent/retriever.py`)**
-- Two-channel retrieval over all cumulative evidence chunks:
+- Two-channel retrieval:
   - **Vector channel (60%)** — TF-IDF cosine similarity (scikit-learn, bigram tokenisation)
   - **Keyword channel (40%)** — BM25 term-frequency scoring (k₁ = 1.5, b = 0.75)
 - Both scores min-max normalised before combining
 - Chunk-type boost: `raw_source` × 1.15, `summary` × 0.95, `source_metadata` × 0.75
+- Same-claim boost: chunks matching the current `claim_id` score × 1.25 to further favour claim-local evidence
 - `_diversify_hits()` applies two diversity axes: kind-bias (up to 4 raw source chunks) and domain-diversity (prefer chunks from distinct source domains so verdicts rest on multiple independent sources, not one article)
+- **Claim-local-first retrieval** (`agent/pipeline.py`): the retrieve node runs two searches — first over same-claim chunks only, then over the full cumulative store. Local hits fill slots unconditionally; fallback cross-run hits are only accepted if their `hybrid_score ≥ 0.2`, preventing weak cross-claim vocabulary matches from contaminating unrelated verdicts
+- Any chunk whose text begins with `"Error fetching page"` is excluded from retrieved evidence (retroactive guard for any error chunks already in the store)
 
 **Verifier (`agent/verifier.py`)**
 - A separate GPT-4o call evaluating each verdict against retrieved evidence on four dimensions:
@@ -310,7 +314,7 @@ open docs/$(date +%Y-%m-%d).html
 
 ## 9. Known Limitations
 
-**Cold-start retrieval:** On the very first run there are no stored chunks, so retrieval is skipped and the verdict is generated from researcher findings alone. The evidence store builds from the second run onwards.
+**Cold-start retrieval:** Retrieval works from the very first run. Evidence chunks are stored immediately after the research node completes, before the retrieve node runs — so same-run claim-local chunks are always available for retrieval. The cumulative cross-run store adds additional depth on subsequent runs.
 
 **Paywalled articles:** `fetch_url` can only read publicly accessible pages. Claude falls back to training knowledge for paywalled sources.
 
@@ -332,3 +336,4 @@ open docs/$(date +%Y-%m-%d).html
 | v2.0 | 2026-03-22 | Added persistent evidence store, hybrid retrieval, GraphRAG, LLM-as-a-Judge, self-correcting retry loop, quality score bars in HTML |
 | v2.1 | 2026-03-23 | RAG-centric shift — raw fetched pages stored as `raw_source` chunks; retriever biased toward raw evidence; `--claim` CLI flag; `evals.py` harness; verifier report in JSON output |
 | v2.2 | 2026-03-23 | Evidence diversification — conditional corroborating fetch with source-type hierarchy; domain-aware retrieval ranking; verifier-triggered corroboration in retry loop; source domain tags in HTML report |
+| v2.3 | 2026-03-23 | Retrieval hardening — claim-local-first retrieval with cumulative-store fallback (score floor 0.2); error-fetch chunk exclusion at store time and retrieval time; evidence store normalisation and deduplication |

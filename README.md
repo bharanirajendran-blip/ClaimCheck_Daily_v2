@@ -19,7 +19,7 @@ Every run:
 5. Researcher summaries and source citations are stored alongside as `summary` and `source_metadata` chunks
 6. A persistent evidence store accumulates chunks across runs
 7. A lightweight knowledge graph links claims to source domains for cross-run context
-8. Hybrid retrieval (TF-IDF + BM25) surfaces the top evidence chunks, biased toward raw source content and spread across distinct source domains
+8. Hybrid retrieval (TF-IDF + BM25) surfaces the top evidence chunks using claim-local-first retrieval: same-claim chunks are searched first and always preferred; the cumulative cross-run store is searched as a fallback (score floor: 0.2) to prevent weak cross-claim chunks from bleeding into unrelated verdicts. Results are biased toward raw source content and spread across distinct source domains. Failed-fetch error pages are excluded from evidence at both store and retrieval time
 9. GPT-4o synthesises a verdict grounded in the retrieved evidence chunks
 10. A second GPT-4o call acts as an independent LLM-as-a-Judge verifier
 11. If grounding or citation scores fall below threshold: the query is refined, a corroborating source from a new domain is fetched, and the verdict is regenerated (up to 2 retries)
@@ -202,7 +202,7 @@ Make sure you have the latest `researcher.py` — `max_tokens=10000`, `thinking_
 `fetch_url` can only read public pages. Claude notes this and falls back to training knowledge for that source.
 
 **Cold-start retrieval**
-On the first run there are no stored chunks yet, so retrieval is skipped and verdict is generated from researcher findings alone. The evidence store builds up from the second run onwards.
+Retrieval works from the very first run. The pipeline stores evidence chunks immediately after research, before the retrieve node runs — so same-run claim-local chunks are always available. The cumulative cross-run store then adds depth on subsequent runs.
 
 ---
 
