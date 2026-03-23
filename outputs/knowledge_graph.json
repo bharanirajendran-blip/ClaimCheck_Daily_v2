@@ -17,7 +17,55 @@
       "type": "claim",
       "text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
       "id": "d2a63ebd"
+    },
+    {
+      "type": "source",
+      "id": "factcheck.org"
+    },
+    {
+      "type": "claim",
+      "text": "Most people get food’s environmental impact completely wrong, study finds",
+      "id": "d763eb04"
+    },
+    {
+      "type": "source",
+      "id": "sciencedaily.com"
+    },
+    {
+      "type": "source",
+      "id": "technologyreview.com"
     }
   ],
-  "links": []
+  "links": [
+    {
+      "rel": "CITES",
+      "source": "8e1baa46",
+      "target": "factcheck.org"
+    },
+    {
+      "rel": "CITES",
+      "source": "d2a63ebd",
+      "target": "technologyreview.com"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "factcheck.org",
+      "target": "8e1baa46"
+    },
+    {
+      "rel": "CITES",
+      "source": "d763eb04",
+      "target": "sciencedaily.com"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "sciencedaily.com",
+      "target": "d763eb04"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "technologyreview.com",
+      "target": "d2a63ebd"
+    }
+  ]
 }

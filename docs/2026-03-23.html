@@ -40,6 +40,7 @@
     .score-fill  { height: 100%; border-radius: 999px; transition: width .3s; }
     .score-pct   { width: 2.5rem; text-align: right; color: var(--text); }
     .retry-note  { margin-top: .4rem; color: #f97316; font-size: .82rem; }
+    .retrieved-text { margin-top: .35rem; color: var(--muted); font-size: .8rem; line-height: 1.5; }
   </style>
 </head>
 <body>
@@ -51,43 +52,224 @@
             </header>
             <main>
             <div class="card">
-              <div class="verdict-badge" style="background:#84cc16">🟢 Mostly True</div>
+              <div class="verdict-badge" style="background:#f97316">🟠 Mostly False</div>
               <h2 class="claim-text">"EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’"</h2>
               <p class="source">Source: <a href="https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/" target="_blank">FactCheck.org</a></p>
               <p class="confidence">Confidence: 90%</p>
-              <p class="summary">The claim that the EPA's $1.3 trillion figure is misleading is mostly true. The EPA's calculation only considers costs, excluding significant benefits such as fuel savings, reduced maintenance, and health and environmental improvements. This selective presentation skews the overall cost-benefit analysis, as the EPA's own data suggests a potential net cost when benefits are included.</p>
+              <p class="summary">The EPA's claim of $1.3 trillion in deregulatory 'savings' is misleading because it only accounts for avoided costs without considering the benefits of the emissions standards, such as fuel savings and environmental benefits. The EPA's own analysis suggests that repealing these standards could result in a net cost to consumers.</p>
               <details>
                 <summary>Key Evidence</summary>
-                <ul><li>The $1.3 trillion figure comes from the EPA's regulatory impact analysis, focusing solely on technology and equipment costs.</li><li>The EPA's own calculations, when including fuel savings, show a potential net cost of $180 billion.</li><li>Experts like Jason Schwartz and Kenneth Gillingham criticize the framing as biased and misleading.</li></ul>
+                <ul><li>The $1.3 trillion figure includes $1.1 trillion in avoided vehicle technology costs and $200 billion in avoided electric vehicle charger costs, but ignores benefits like fuel savings and reduced pollution.</li><li>FactCheck.org notes that the EPA's own regulatory impact analysis shows a potential net cost of $180 billion when fuel savings are considered.</li><li>Experts like Jason Schwartz and Kenneth Gillingham criticize the methodology as biased and atypical, focusing only on costs without benefits.</li></ul>
               </details>
-              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div></div></details>
-            </div>
-            <div class="card">
-              <div class="verdict-badge" style="background:#84cc16">🟢 Mostly True</div>
-              <h2 class="claim-text">"This 67,800-year-old handprint is the oldest art ever found"</h2>
-              <p class="source">Source: <a href="https://www.sciencedaily.com/releases/2026/03/260322020300.htm" target="_blank">Science Daily — Top Science</a></p>
-              <p class="confidence">Confidence: 90%</p>
-              <p class="summary">The claim that a 67,800-year-old handprint is the oldest art ever found is mostly true. The hand stencil, found in a cave in Sulawesi, Indonesia, has been dated using uranium-series dating to at least 67,800 years ago, making it the oldest reliably dated cave art. However, the definition of 'art' can vary, and other symbolic artifacts might be older. The research is credible, conducted by a reputable international team, and uses established dating methods.</p>
               <details>
-                <summary>Key Evidence</summary>
-                <ul><li>The claim that a 67,800-year-old handprint is 'the oldest art ever found' appears largely accurate with important caveats. The source article from Science Daily reports on research led by credible institutions (Griffith University and Indonesia's BRIN), using established uranium-series dating methods—the same technique that has been used successfully to date other ancient cave art in the region.</li><li>The discovery builds on previous work by the same team, which identified progressively older cave art in Sulawesi over the past decade. The 2024 finding (previously the oldest) is now surpassed by at least 15,000 years. The research appears methodologically sound: uranium-series dating of calcite layers provides minimum ages, and the team examined layers both over and beneath the artwork for accuracy.</li><li>The claim applies to cave art/rock art. Other symbolic artifacts—such as the ~77,000-year-old ochre engravings from Blombos Cave, South Africa, or ~100,000+ year-old shell beads—might be considered 'art' by some definitions.</li><li>The hand stencil in Sulawesi, dated via uranium-series analysis to at least 67,800 years ago, is credibly the oldest reliably dated cave art discovered to date. The caveat is that 'oldest art' depends on how one defines art; other symbolic objects may be older.</li></ul>
+                <summary>Retrieved Evidence Chunks</summary>
+                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.80)<div class="retrieved-text">EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’ - FactCheck.org
+
+Facebook
+
+Twitter
+
+Tumblr
+
+Close
+
+Skip to main content
+
+            FactCheck
+.org
+®
+
+A Project of The Annenberg Public Policy Center
+
+This article is available in both English and Español
+
+English
+
+Español
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Trump administration officials have claimed that they are saving Americans over $1.3 trillion by ending regulation of greenhouse gas emissions from cars and trucks. But the figure does not incorporate any benefits of the emissions standards. By one of the Environmental Protection Agency’s own calculations, getting rid of the standards could cost billions.
+
+On Feb. 12, the EPA 
+announce</div></li><li><strong>raw_source</strong> · Fetched Source 1.6 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.48)<div class="retrieved-text"> look at the EPA’s calculations and explain why the administration’s singular focus on $1.3 trillion is misleading.
+
+EPA’s Math 
+
+According to an EPA 
+fact sheet
+, the $1.3 trillion in alleged savings for U.S. consumers includes about $1.1 trillion in avoided vehicle technology costs and $200 billion in avoided electric vehicle charger and equipment costs between 2027 through 2055.
+
+Those figures are taken from the agency’s 
+regulatory impact analysis
+. The analysis modeled four different scenar
+
+[Content truncated]</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.26)<div class="retrieved-text">d
+ 
+that it was revoking
+ the 2009 
+endangerment finding
+, which allowed the agency to regulate greenhouse gases such as carbon dioxide that trap heat and cause climate change. Without that policy in place, the agency said it was terminating its rules that limit such pollution from vehicles. The regulation has primarily acted to 
+increase fuel efficiency
+, since more efficient cars and trucks burn less gas and release less carbon pollution. 
+
+Since unveiling the finalized rulemaking last month that eliminates the emissions standards, 
+officials
+ 
+have
+ 
+frequently
+ 
+touted
+ an alleged savings of $1.3 trillion.
+
+“This action will save American taxpayers over $1.3 trillion,” EPA Administrator </div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.22)<div class="retrieved-text">Lee Zeldin 
+said
+ in the press conference announcing the policy change. “What that means is lower prices, more choices, and an end of heavy-handed climate policies. With today’s announcement, American families will save over … $2,400 for a new vehicle.”
+
+In the same briefing, President Donald Trump and Russell Vought, director of the Office of Management and Budget, also mentioned the $1.3 trillion figure. White House Press Secretary Karoline Leavitt has 
+similarly referred
+ to it, and in official communications, the 
+EPA
+ 
+has
+ also emphasized it.
+
+But the $1.3 trillion is not a net total. It only includes the added cost of making cars and trucks more fuel efficient over a period of nearly </div></li></ul>
               </details>
               <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:92%;background:hsl(111,70%,45%)"></div></div><span class="score-pct">92%</span></div></div></details>
             </div>
             <div class="card">
               <div class="verdict-badge" style="background:#84cc16">🟢 Mostly True</div>
-              <h2 class="claim-text">"The Pentagon is planning for AI companies to train on classified data, defense official says"</h2>
-              <p class="source">Source: <a href="https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/" target="_blank">MIT Technology Review</a></p>
+              <h2 class="claim-text">"Most people get food’s environmental impact completely wrong, study finds"</h2>
+              <p class="source">Source: <a href="https://www.sciencedaily.com/releases/2026/03/260323005528.htm" target="_blank">Science Daily — Top Science</a></p>
               <p class="confidence">Confidence: 85%</p>
-              <p class="summary">The claim that the Pentagon is planning for AI companies to train on classified data is mostly true. The MIT Technology Review article provides credible evidence from an anonymous defense official that discussions are underway to set up secure environments for AI training on classified data. However, the plans are still in the discussion phase, and there is no official on-record confirmation from the Pentagon.</p>
+              <p class="summary">The claim that most people misunderstand the environmental impact of food is largely accurate but slightly overstated. The study by the University of Nottingham found systematic misconceptions, particularly overestimating the impact of processed foods and underestimating the impact of nuts and beef. However, the headline exaggerates by suggesting complete ignorance rather than partial understanding skewed by oversimplified heuristics.</p>
               <details>
                 <summary>Key Evidence</summary>
-                <ul><li>A US defense official confirmed to MIT Technology Review that training AI models on classified data 'is expected to make them more accurate and effective in certain tasks.'</li><li>The article states that the Pentagon is discussing plans to set up secure environments for AI companies to train military-specific versions of their models on classified data.</li><li>The Pentagon intends to first evaluate model accuracy using non-classified data before proceeding with classified training, indicating early-stage discussions.</li></ul>
+                <ul><li>The study was conducted by the University of Nottingham's School of Psychology and published in the Journal of Cleaner Production.</li><li>Participants were asked to sort supermarket foods into environmental impact categories, revealing misconceptions such as overestimating processed foods and underestimating nuts and beef.</li><li>The study used life-cycle assessment as a scientific benchmark, which evaluates factors like greenhouse gas emissions, land use, and water use.</li><li>Participants expressed willingness to change purchasing behavior after learning the actual impacts, indicating misconceptions are correctable with better information.</li></ul>
               </details>
-              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:70%;background:hsl(84,70%,45%)"></div></div><span class="score-pct">70%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div></div></details>
+              <details>
+                <summary>Retrieved Evidence Chunks</summary>
+                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 1.15)<div class="retrieved-text">Most people get food’s environmental impact completely wrong, study finds | ScienceDaily
+
+Science News
+
+from research organizations
+
+Most people get food’s environmental impact completely wrong, study finds
+
+Date:
+
+March 23, 2026
+
+Source:
+
+University of Nottingham
+
+Summary:
+
+People often get the environmental impact of food wrong, according to new research. While many assume processed foods are the worst, they tend to overlook the surprisingly high impact of items like nuts and underestimate how damaging beef really is. These misunderstandings come from relying on simple categories like “animal vs. plant” rather than the full picture.
+
+Share:
+
+Facebook
+
+Twitter
+
+Pinterest
+
+LinkedIN
+
+Email
+
+F</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.37)<div class="retrieved-text">ULL STORY
+
+A new study reveals that many people misunderstand the true environmental impact of the foods they eat—sometimes in surprising ways. Credit: Shutterstock
+
+A new study offers fresh insight into how people judge the environmental impact of the foods they eat, and the results suggest many are getting it wrong. These misunderstandings point to a clear need for simple environmental impact labels to help guide better choices.
+
+Researchers from the University of Nottingham's School of Psychology asked 168 participants in the UK to sort a wide variety of supermarket foods into environmental impact categories of their own making. The findings revealed consistent misconceptions about which </div></li><li><strong>raw_source</strong> · Fetched Source 1.4 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.33)<div class="retrieved-text"> evaluates multiple factors, including greenhouse gas emissions (often as CO
+2
+ equivalents), land use, and water use.
+
+Study Examines Real-World Grocery Choices
+
+Earlier research has typically focused on a limited selection of foods. This project, funded by the UKRI's Smart Data Research UK, is the first to explore how people perceive the environmental impact of a broad range of products commonly found in a typical grocery shop.
+
+Participants were also shown scientific estimates of each product's environmental impact and asked whether the results were higher or lower than they expected.
+
+Key Misconceptions About Food and Sustainability
+
+The study found that people tend to judge food impact </div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.30)<div class="retrieved-text">foods are more or less harmful to the environment. The study was published in the 
+Journal of Cleaner Production
+.
+
+Why Food Choices Matter for the Environment
+
+Food production plays a major role in environmental issues, including greenhouse gas emissions and biodiversity loss. Encouraging more sustainable eating habits depends in part on understanding how people perceive the environmental footprint of different foods.
+
+Scientists measure a food's environmental impact using a life cycle assessment, which tracks the entire process from production to disposal. This "cradle-to-grave" approach considers inputs such as fertilizer, water, and energy, along with outputs like emissions and waste. It</div></li></ul>
+              </details>
+              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:88%;background:hsl(105,70%,45%)"></div></div><span class="score-pct">88%</span></div></div></details>
+            </div>
+            <div class="card">
+              <div class="verdict-badge" style="background:#22c55e">✅ True</div>
+              <h2 class="claim-text">"The Pentagon is planning for AI companies to train on classified data, defense official says"</h2>
+              <p class="source">Source: <a href="https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/" target="_blank">MIT Technology Review</a></p>
+              <p class="confidence">Confidence: 90%</p>
+              <p class="summary">The claim that the Pentagon is planning for AI companies to train on classified data is accurate. MIT Technology Review reports that a US defense official confirmed the Pentagon is discussing plans to allow AI models to train on classified data, which would be a new development beyond current practices. This initiative is still in the planning phase, with initial evaluations on non-classified data planned before any implementation.</p>
+              <details>
+                <summary>Key Evidence</summary>
+                <ul><li>The Pentagon is discussing plans to set up secure environments for generative AI companies to train military-specific versions of their models on classified data, according to MIT Technology Review.</li><li>AI models like Anthropic’s Claude are already used in classified settings, but training on classified data would be a new development, presenting unique security risks.</li><li>The Pentagon intends to first evaluate model accuracy when trained on non-classified data before proceeding to classified training, as stated by a US defense official.</li></ul>
+              </details>
+              <details>
+                <summary>Retrieved Evidence Chunks</summary>
+                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.92)<div class="retrieved-text">The Pentagon is making plans for AI companies to train on classified data, defense official says | MIT Technology Review
+
+Skip to Content
+ 
+The Pentagon is discussing plans to set up secure environments for generative AI companies to train military-specific versions of their models on classified data, 
+MIT Technology Review 
+has learned. 
+ 
+AI models like Anthropic’s Claude are already used to answer questions in classified settings; applications include analyzing targets in Iran. But allowing models to train on and learn from classified data would be a new development that presents unique security risks. It would mean sensitive intelligence like surveillance reports or battlefield assessmen</div></li><li><strong>raw_source</strong> · Fetched Source 1.4 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.47)<div class="retrieved-text">used computer vision models, an older form of AI, to identify objects in images and footage it collects from drones and airplanes, and federal agencies have 
+awarded contracts
+ to companies to train AI models on such content. And AI companies building large language models (LLMs) and chatbots have created versions of their models fine-tuned for government work, like Anthropic’s Claude Gov, which are designed to operate across more languages and in secure environments. But the official’s comments are the first indication that AI companies building LLMs, like OpenAI and xAI, could train government-specific versions of their models directly on classified data.
+ 
+
+Aalok Mehta, who directs the Wa</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.46)<div class="retrieved-text">ts could become embedded into the models themselves, and it would bring AI firms into closer contact with classified data than before. 
+ 
+ 
+Training versions of AI models on classified data is expected to make them more accurate and effective in certain tasks, according to a US defense official who spoke on background with 
+MIT Technology Review
+. The news comes as demand for more powerful models is high: The Pentagon has reached agreements with OpenAI and Elon Musk’s xAI to operate their models in classified settings and is implementing a new 
+agenda
+ to become an “an ‘AI-first’ warfighting force” as the conflict with Iran escalates. (The Pentagon did not comment on its AI training plans as</div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.45)<div class="retrieved-text"> of publication time.)
+ 
+Training would be done in a secure data center that’s accredited to host classified government projects, and where a copy of an AI model is paired with classified data, according to two people familiar with how such operations work. Though the Department of Defense would remain the owner of the data, personnel from AI companies might in rare cases access the data if they have appropriate security clearance, the official said. 
+ 
+
+Before allowing this new training, though, the official said, the Pentagon intends to evaluate how accurate and effective models are when trained on nonclassified data, like commercially available satellite imagery. 
+ 
+The military has long </div></li></ul>
+              </details>
+              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:92%;background:hsl(111,70%,45%)"></div></div><span class="score-pct">92%</span></div></div></details>
             </div></main>
             <footer>
-              Generated 2026-03-23T03:35:35Z · Powered by Claude + GPT-4o
+              Generated 2026-03-23T11:33:56Z · Powered by Claude + GPT-4o
             </footer>
 </body>
 </html>

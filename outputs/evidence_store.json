@@ -57,10 +57,11 @@
     "chunk_id": "ce5f10854ccb",
     "claim_id": "8e1baa46",
     "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
-    "source_url": "",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
     "section": "Key Sources",
-    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| FactCheck.org - EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings' | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** - Annenberg Public Policy Center project with detailed sourcing and expert quotes |\n| EPA Regulatory Impact Analysis | Referenced in article | **High** - Primary government source document |\n| Expert testimony (Jason Schwartz, NYU; Kenneth Gillingham, Yale) | Quoted in article | **High** - Academic experts in regulatory policy and economics |\n\n---",
-    "date_slug": "2026-03-23"
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| FactCheck.org - EPA's Misleading Claim Analysis | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** - Nonpartisan fact-checking organization affiliated with the Annenberg Public Policy Center; cites primary documents and named expert sources |\n| EPA Regulatory Impact Analysis | Referenced in article | **High** - Primary government document |\n| Expert testimony (Jason Schwartz, NYU; Kenneth Gillingham, Yale) | Quoted in article | **High** - Credentialed academic experts in regulatory policy and economics |\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
   },
   {
     "chunk_id": "44af15976c46",
@@ -192,18 +193,450 @@
     "chunk_id": "1893e4ed2d99",
     "claim_id": "d2a63ebd",
     "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
-    "source_url": "",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
     "section": "Caveats & Missing Context",
-    "text": "Several important caveats apply to this claim:\n\n1. **Planning vs. Implementation**: The claim refers to \"planning\" and \"discussions,\" not finalized policy or active programs. The article notes the Pentagon wants to first test with non-classified data.\n\n2. **Single-source reporting**: While MIT Technology Review is reputable, the core claim rests primarily on one anonymous defense official speaking on background.\n\n3. **Security concerns acknowledged**: Expert Aalok Mehta raised significant concerns about classified information leaking between military departments with different clearance levels, though he noted risks of data reaching the public internet or AI companies could be mitigated \"if ",
-    "date_slug": "2026-03-23"
+    "text": "Several important caveats apply to this claim:\n\n1. **Planning vs. Implementation**: The claim accurately states the Pentagon is \"planning\" for this, not that it's currently happening. The article confirms these are \"discussions\" and \"plans\" still being developed.\n\n2. **Security risks acknowledged**: Expert Aalok Mehta raised significant concerns about information leakage—particularly the risk that classified data (like operative names) embedded in models could be inadvertently surfaced to unauthorized users within the military. However, he noted that risks of leakage to the general internet or back to AI companies are manageable \"if set up right.\"\n\n3. **Phased approach**: The Pentagon report",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
   },
   {
     "chunk_id": "cfae10da67d4",
     "claim_id": "d2a63ebd",
     "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Key Sources",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| MIT Technology Review - Original reporting | https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ | **High** - Established technology publication with direct sourcing from a defense official and expert commentary |\n\n---\n\n**Verdict**: The claim is **ACCURATE** as stated. MIT Technology Review's reporting, based on a defense official speaking on background, confirms the Pentagon is making plans for AI companies to train models on classified data. The headline claim is supported, though it's important to note these are discussions/plans rather",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "e978b681040f",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.1",
+    "text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’ - FactCheck.org\n\nFacebook\n\nTwitter\n\nTumblr\n\nClose\n\nSkip to main content\n\n            FactCheck\n.org\n®\n\nA Project of The Annenberg Public Policy Center\n\nThis article is available in both English and Español\n\nEnglish\n\nEspañol\n\n \n\n \n\n \n\n \n\n \n\n \n\n \n\nTrump administration officials have claimed that they are saving Americans over $1.3 trillion by ending regulation of greenhouse gas emissions from cars and trucks. But the figure does not incorporate any benefits of the emissions standards. By one of the Environmental Protection Agency’s own calculations, getting rid of the standards could cost billions.\n\nOn Feb. 12, the EPA \nannounce",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "780ddc194e97",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.2",
+    "text": "d\n \nthat it was revoking\n the 2009 \nendangerment finding\n, which allowed the agency to regulate greenhouse gases such as carbon dioxide that trap heat and cause climate change. Without that policy in place, the agency said it was terminating its rules that limit such pollution from vehicles. The regulation has primarily acted to \nincrease fuel efficiency\n, since more efficient cars and trucks burn less gas and release less carbon pollution. \n\nSince unveiling the finalized rulemaking last month that eliminates the emissions standards, \nofficials\n \nhave\n \nfrequently\n \ntouted\n an alleged savings of $1.3 trillion.\n\n“This action will save American taxpayers over $1.3 trillion,” EPA Administrator ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "d228dfe974d7",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.3",
+    "text": "Lee Zeldin \nsaid\n in the press conference announcing the policy change. “What that means is lower prices, more choices, and an end of heavy-handed climate policies. With today’s announcement, American families will save over … $2,400 for a new vehicle.”\n\nIn the same briefing, President Donald Trump and Russell Vought, director of the Office of Management and Budget, also mentioned the $1.3 trillion figure. White House Press Secretary Karoline Leavitt has \nsimilarly referred\n to it, and in official communications, the \nEPA\n \nhas\n also emphasized it.\n\nBut the $1.3 trillion is not a net total. It only includes the added cost of making cars and trucks more fuel efficient over a period of nearly ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "472b7d861a05",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.4",
+    "text": "three decades, without considering any of the benefits, such as reduced fuel or maintenance costs. One of the agency’s own \nestimates\n, which also ignores any health or environmental benefits, shows that repealing the policy could ultimately cost Americans $180 billion.\n\n“This is a very biased and misleading way to talk about the effects of this rollback,” \nJason Schwartz\n, regulatory policy director at New York University School of Law’s Institute for Policy Integrity, told us of the $1.3 trillion framing. “It’s actually worse than only looking at one half of the equation because they’ve also left a bunch of really important effects off the other side of the equation.”\n\n“I honestly can’t re",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "fc8fefbec168",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.5",
+    "text": "call another rulemaking where the focus of all of the fact sheets and press releases was ONLY about the costs of the policy,” \nKenneth Gillingham\n, a Yale University economics professor, told us in an email.\n\nWith the elimination of these standards, soon there will be effectively no fuel efficiency standards in place on American cars and trucks. While the Department of Transportation’s \nfuel economy\n \nstandards\n \nstill technically exist\n, with the passage of the One Big Beautiful Bill Act earlier this year, Congress set the compliance penalties in the program to zero. The Trump administration is also \nnow working\n to finalize significant rollbacks to the standards.\n\nHere, we’ll take a closer",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "1defb550e94e",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Fetched Source 1.6",
+    "text": " look at the EPA’s calculations and explain why the administration’s singular focus on $1.3 trillion is misleading.\n\nEPA’s Math \n\nAccording to an EPA \nfact sheet\n, the $1.3 trillion in alleged savings for U.S. consumers includes about $1.1 trillion in avoided vehicle technology costs and $200 billion in avoided electric vehicle charger and equipment costs between 2027 through 2055.\n\nThose figures are taken from the agency’s \nregulatory impact analysis\n. The analysis modeled four different scenar\n\n[Content truncated]",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "7e6f0eab761f",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Overview",
+    "text": "The source article has loaded successfully. This is a detailed FactCheck.org article examining the EPA's $1.3 trillion claim. Let me now write my comprehensive analysis based on this evidence.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "9a757d509754",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Sub-questions",
+    "text": "1. What is the origin of the $1.3 trillion \"savings\" figure cited by the EPA and Trump administration officials?\n2. How was this figure calculated, and what does it include or exclude?\n3. What do the EPA's own regulatory impact analyses show when benefits are considered alongside costs?\n4. What do independent experts say about the methodology and framing of this figure?\n5. What is the broader regulatory context for vehicle emissions and fuel efficiency standards?\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "110842f30883",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Evidence Assessment",
+    "text": "The FactCheck.org investigation reveals that the EPA's $1.3 trillion claim is fundamentally misleading because it represents only one side of a cost-benefit equation. According to the source article, the figure comprises approximately **$1.1 trillion in avoided vehicle technology costs** and **$200 billion in avoided electric vehicle charger and equipment costs** over the period 2027–2055.\n\nThe critical issue is that this calculation **completely ignores the benefits** of the emissions standards being repealed. These benefits include:\n- Reduced fuel costs for consumers (more efficient vehicles use less gas)\n- Lower maintenance costs\n- Health benefits from reduced pollution\n- Environmental be",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "1e8869325b53",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Supporting evidence",
+    "text": "- The $1.3 trillion figure comes directly from EPA fact sheets and official communications, confirming officials did make this claim repeatedly (EPA Administrator Lee Zeldin, President Trump, OMB Director Russell Vought, Press Secretary Karoline Leavitt)\n- EPA's own regulatory impact analysis provides alternative scenarios showing net costs to consumers when benefits are included\n- The claim is technically accurate as a raw cost figure but misleading as a \"savings\" figure\n- Independent regulatory and economics experts confirm the methodology is atypical and one-sided\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "af0f98f26dc7",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Contradicting evidence",
+    "text": "- No evidence contradicts FactCheck.org's analysis\n- The EPA's own documents contain the data showing the $1.3 trillion figure excludes benefits\n- Administration officials have not disputed the underlying math, only emphasized the cost side\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "25996b2d6275",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Caveats & Missing Context",
+    "text": "1. **The full regulatory impact analysis was truncated** in the fetched article, so the complete range of EPA scenarios (which apparently numbered four) could not be fully assessed.\n\n2. **Disputed science context**: The article notes the EPA revoked the 2009 endangerment finding that allowed greenhouse gas regulation. The scientific consensus on climate change and the validity of this revocation are separate contested issues that affect how one weighs environmental benefits.\n\n3. **Timeframe matters**: The $1.3 trillion spans nearly three decades (2027–2055), and economic projections over such periods carry significant uncertainty.\n\n4. **Vehicle price vs. total cost of ownership**: While vehi",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "bcb28b4195c9",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Verdict",
+    "text": "**The claim that the EPA's $1.3 trillion \"savings\" figure is misleading is WELL-SUPPORTED.**\n\nFactCheck.org's analysis demonstrates that the administration's framing violates basic cost-benefit analysis principles by presenting only costs avoided while ignoring substantial consumer benefits (fuel savings, lower maintenance) that the EPA's own documents acknowledge. The agency's alternative calculations show the rollback could actually result in a **net cost of $180 billion** to Americans—even before accounting for health or environmental impacts. This represents a significant departure from standard regulatory communication practices, as confirmed by independent experts.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "e04ec72db186",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "Source: FactCheck.org - EPA's Misleading Claim Analysis. URL: https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/. Reliability: High - Nonpartisan fact-checking organization affiliated with the Annenberg Public Policy Center; cites primary documents and named expert sources.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "8e0f903a8129",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
     "source_url": "",
     "section": "Key Sources",
-    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| MIT Technology Review (primary source) | https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ | **High** - Established technology journalism outlet with editorial standards; uses named expert sources alongside anonymous official |\n\n---\n\n**VERDICT**: The claim is **accurately reported** based on the source article. MIT Technology Review's reporting, while relying on an anonymous official, provides credible evidence that the Pentagon is indeed discussing plans for AI companies to train on classified data. The headline fairly represents the ar",
-    "date_slug": "2026-03-23"
+    "text": "Source: EPA Regulatory Impact Analysis. URL: . Reliability: High - Primary government document.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "d9f103d90d43",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "Quoted in article",
+    "section": "Key Sources",
+    "text": "Source: Expert testimony (Jason Schwartz, NYU; Kenneth Gillingham, Yale). URL: Quoted in article. Reliability: High - Credentialed academic experts in regulatory policy and economics.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "55c35dc4a5a1",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.1",
+    "text": "Most people get food’s environmental impact completely wrong, study finds | ScienceDaily\n\nScience News\n\nfrom research organizations\n\nMost people get food’s environmental impact completely wrong, study finds\n\nDate:\n\nMarch 23, 2026\n\nSource:\n\nUniversity of Nottingham\n\nSummary:\n\nPeople often get the environmental impact of food wrong, according to new research. While many assume processed foods are the worst, they tend to overlook the surprisingly high impact of items like nuts and underestimate how damaging beef really is. These misunderstandings come from relying on simple categories like “animal vs. plant” rather than the full picture.\n\nShare:\n\nFacebook\n\nTwitter\n\nPinterest\n\nLinkedIN\n\nEmail\n\nF",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "e56c457525d7",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.2",
+    "text": "ULL STORY\n\nA new study reveals that many people misunderstand the true environmental impact of the foods they eat—sometimes in surprising ways. Credit: Shutterstock\n\nA new study offers fresh insight into how people judge the environmental impact of the foods they eat, and the results suggest many are getting it wrong. These misunderstandings point to a clear need for simple environmental impact labels to help guide better choices.\n\nResearchers from the University of Nottingham's School of Psychology asked 168 participants in the UK to sort a wide variety of supermarket foods into environmental impact categories of their own making. The findings revealed consistent misconceptions about which ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "920771004b74",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.3",
+    "text": "foods are more or less harmful to the environment. The study was published in the \nJournal of Cleaner Production\n.\n\nWhy Food Choices Matter for the Environment\n\nFood production plays a major role in environmental issues, including greenhouse gas emissions and biodiversity loss. Encouraging more sustainable eating habits depends in part on understanding how people perceive the environmental footprint of different foods.\n\nScientists measure a food's environmental impact using a life cycle assessment, which tracks the entire process from production to disposal. This \"cradle-to-grave\" approach considers inputs such as fertilizer, water, and energy, along with outputs like emissions and waste. It",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "c41646b377dd",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.4",
+    "text": " evaluates multiple factors, including greenhouse gas emissions (often as CO\n2\n equivalents), land use, and water use.\n\nStudy Examines Real-World Grocery Choices\n\nEarlier research has typically focused on a limited selection of foods. This project, funded by the UKRI's Smart Data Research UK, is the first to explore how people perceive the environmental impact of a broad range of products commonly found in a typical grocery shop.\n\nParticipants were also shown scientific estimates of each product's environmental impact and asked whether the results were higher or lower than they expected.\n\nKey Misconceptions About Food and Sustainability\n\nThe study found that people tend to judge food impact ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "e7b2df7045e6",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.5",
+    "text": "using two main factors: whether the food comes from animals or plants, and how processed it is. In general, participants assumed that meat and dairy products, as well as highly processed foods, are worse for the environment.\n\nHowever, these assumptions do not always match reality. Many participants overestimated the environmental impact of processed foods while underestimating the impact of water-intensive products (e.g. nuts). They were also surprised to learn how much higher the environmental impact of beef is compared to other meats like chicken.\n\nLabels Could Help People Make Better Choices\n\nDaniel Fletcher, Postdoctoral researcher from the School of Psychology is lead author on the stud",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "aa5be1abe54a",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Fetched Source 1.6",
+    "text": "y, he said: \"We designed an online task to engage people with the topic and provide an interactive and visual way of investigating their understanding of the environmental impact of food. We found participants would be willing to change their purchasing behavior based on this task, reporting intentions to decrease (or increase) their future consumption of products for which they were surprised by how high (or low) the scientifically estimated environmental impact was.\n\n\"Our findings also suggest\n\n[Content truncated]",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "f94116522e04",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Overview",
+    "text": "I've successfully retrieved the primary source article. This provides substantial information about the study. Let me now write my comprehensive analysis based on what I've read.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "39b446f5bb92",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Sub-questions",
+    "text": "1. What study is being referenced, and who conducted it?\n2. What methodology did the researchers use to assess people's perceptions?\n3. What specific misconceptions did participants demonstrate?\n4. How does scientific measurement of food's environmental impact actually work?\n5. What are the practical implications of these findings?\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "d8e14c0ce1f2",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Evidence Assessment",
+    "text": "The claim that \"most people get food's environmental impact completely wrong\" is **substantially supported** by the source article, though the headline is somewhat sensationalized.\n\nThe study, conducted by researchers at the **University of Nottingham's School of Psychology** and published in the peer-reviewed *Journal of Cleaner Production*, examined 168 UK participants who were asked to sort supermarket foods into environmental impact categories. The research was funded by UKRI's Smart Data Research UK, indicating institutional credibility.\n\nThe study found that participants relied on two primary heuristics when judging environmental impact:\n1. **Animal vs. plant origin** — assuming all an",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "eb161a8a725c",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Supporting evidence",
+    "text": "- **Peer-reviewed publication**: Study published in *Journal of Cleaner Production*, a respected environmental science journal\n- **Credible institution**: Conducted by University of Nottingham's School of Psychology\n- **Funded research**: Supported by UKRI's Smart Data Research UK program\n- **Established methodology**: Used life-cycle assessment as the scientific benchmark\n- **Specific findings documented**: Identified concrete misconceptions (nuts underestimated, processed foods overestimated, beef vs. chicken gap not understood)\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "2ca4ba4d840a",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Contradicting evidence",
+    "text": "- **No contradicting evidence found in the source article**\n- The study sample was limited to 168 UK participants, which the article does not present as contradictory but does limit generalizability\n- No competing studies or expert criticism cited\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "2f62ae7346c0",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Sample size and demographics**: 168 participants is modest, and all were from the UK. Perceptions may differ across cultures with different dietary norms.\n\n2. **Headline overstates findings**: \"Completely wrong\" is editorial. The study shows *systematic biases*, not total ignorance—participants correctly identified meat/dairy as generally higher impact.\n\n3. **\"Most people\"**: The study surveyed a specific sample; generalizing to \"most people\" globally is an extrapolation.\n\n4. **Environmental impact is multidimensional**: Life-cycle assessments measure greenhouse gases, water use, land use, and more. People might correctly judge one dimension (e.g., carbon) while missing others (e.g., wa",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "f5be74218f8b",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Key Sources",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| \"Most people get food's environmental impact completely wrong, study finds\" — ScienceDaily | https://www.sciencedaily.com/releases/2026/03/260323005528.htm | **High** (science news aggregator summarizing peer-reviewed research) |\n| *Journal of Cleaner Production* (original study) | Not directly accessed | **High** (peer-reviewed journal) |\n\n---\n\n**Verdict**: The claim is **largely accurate** but slightly overstated. The underlying research is credible and does demonstrate systematic misconceptions about food's environmental impact, particularly regarding processed foods, nuts, and the relative impact of beef vs. other meats. Howev",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "ff046c5d384a",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Key Sources",
+    "text": "Source: \"Most people get food's environmental impact completely wrong, study finds\" — ScienceDaily. URL: https://www.sciencedaily.com/releases/2026/03/260323005528.htm. Reliability: High (science news aggregator summarizing peer-reviewed research).",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "c0bc1bc5f26f",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "Not directly accessed",
+    "section": "Key Sources",
+    "text": "Source: *Journal of Cleaner Production* (original study). URL: Not directly accessed. Reliability: High (peer-reviewed journal).",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "d7652b647fef",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.1",
+    "text": "The Pentagon is making plans for AI companies to train on classified data, defense official says | MIT Technology Review\n\nSkip to Content\n \nThe Pentagon is discussing plans to set up secure environments for generative AI companies to train military-specific versions of their models on classified data, \nMIT Technology Review \nhas learned. \n \nAI models like Anthropic’s Claude are already used to answer questions in classified settings; applications include analyzing targets in Iran. But allowing models to train on and learn from classified data would be a new development that presents unique security risks. It would mean sensitive intelligence like surveillance reports or battlefield assessmen",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "d92eea29bb9e",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.2",
+    "text": "ts could become embedded into the models themselves, and it would bring AI firms into closer contact with classified data than before. \n \n \nTraining versions of AI models on classified data is expected to make them more accurate and effective in certain tasks, according to a US defense official who spoke on background with \nMIT Technology Review\n. The news comes as demand for more powerful models is high: The Pentagon has reached agreements with OpenAI and Elon Musk’s xAI to operate their models in classified settings and is implementing a new \nagenda\n to become an “an ‘AI-first’ warfighting force” as the conflict with Iran escalates. (The Pentagon did not comment on its AI training plans as",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "b71041f0d235",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.3",
+    "text": " of publication time.)\n \nTraining would be done in a secure data center that’s accredited to host classified government projects, and where a copy of an AI model is paired with classified data, according to two people familiar with how such operations work. Though the Department of Defense would remain the owner of the data, personnel from AI companies might in rare cases access the data if they have appropriate security clearance, the official said. \n \n\nBefore allowing this new training, though, the official said, the Pentagon intends to evaluate how accurate and effective models are when trained on nonclassified data, like commercially available satellite imagery. \n \nThe military has long ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "29628beec4ca",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.4",
+    "text": "used computer vision models, an older form of AI, to identify objects in images and footage it collects from drones and airplanes, and federal agencies have \nawarded contracts\n to companies to train AI models on such content. And AI companies building large language models (LLMs) and chatbots have created versions of their models fine-tuned for government work, like Anthropic’s Claude Gov, which are designed to operate across more languages and in secure environments. But the official’s comments are the first indication that AI companies building LLMs, like OpenAI and xAI, could train government-specific versions of their models directly on classified data.\n \n\nAalok Mehta, who directs the Wa",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "fd686d4ac56b",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.5",
+    "text": "dhwani AI Center at the Center for Strategic and International Studies and previously led AI policy efforts at Google and OpenAI, says training on classified data, as opposed to just answering questions about it, would present new risks. \n \n \nThe biggest of these, he says, is that classified information these models train on could be resurfaced to anyone using the model. That would be a problem if lots of different military departments, all with different classification levels and needs for information, were to share the same AI. \n \n“You can imagine, for example, a model that has access to some sort of sensitive human intelligence—like the name of an operative—leaking that information to a p",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "0d8484591d36",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Fetched Source 1.6",
+    "text": "art of the Defense Department that isn’t supposed to have access to that information,” Mehta says. That could create a security risk for the operative, one that’s difficult to perfectly mitigate if a particular model is used by more than one group within the military.\n \nHowever, Mehta says, it’s not as hard to keep information contained from the broader world: “If you set this up right, you will have very little risk of that data being surfaced on the general internet or back to OpenAI.” The gov\n\n[Content truncated]",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "raw_source"
+  },
+  {
+    "chunk_id": "987ca9174624",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Overview",
+    "text": "I have successfully retrieved the primary source article from MIT Technology Review. This provides substantial evidence to analyze the claim. Let me now write my comprehensive analysis.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "e9e1925473ca",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Sub-questions",
+    "text": "1. What specific plans is the Pentagon making regarding AI and classified data?\n2. Which AI companies are involved or expected to be involved?\n3. How would classified data training differ from current AI use in defense settings?\n4. What security risks does this arrangement present?\n5. What safeguards are being considered?\n6. What is the current status—is this happening now or being planned?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "7109b980f4e1",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Evidence Assessment",
+    "text": "The claim is **substantially accurate** based on the MIT Technology Review article. The reporting confirms that the Pentagon is actively \"discussing plans\" to establish secure environments where generative AI companies could train military-specific versions of their models on classified data. This comes from a US defense official speaking on background with the publication.\n\nThe article provides important nuance: this represents a significant evolution from current practices. AI models like Anthropic's Claude are *already* being used to answer questions in classified settings (including analyzing targets in Iran), but allowing models to *train on* classified data—as opposed to merely queryin",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "2c0fcd43e8b4",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Supporting evidence",
+    "text": "- **Direct official confirmation**: A US defense official spoke on background with MIT Technology Review confirming the Pentagon is discussing these plans\n- **Existing precedent**: The Pentagon already has agreements with OpenAI and xAI to operate models in classified settings\n- **Strategic context**: The Pentagon is implementing an agenda to become an \"AI-first warfighting force\" amid escalating conflict with Iran\n- **Expert validation**: Aalok Mehta (Wadhwani AI Center director, former Google/OpenAI AI policy lead) confirmed such training is technically feasible and discussed the associated risks\n- **Infrastructure pathway**: Government-specific AI versions (like Anthropic's Claude Gov) al",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "dd4c379089f8",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Contradicting evidence",
+    "text": "- **Pentagon non-response**: The Pentagon did not comment on its AI training plans as of publication time, meaning there's no official on-the-record confirmation\n- **Conditional status**: The official indicated training on classified data would only proceed *after* evaluation of non-classified training performance—suggesting this is contingent planning rather than definite commitment",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "eede153ca750",
+    "claim_id": "d2a63ebd",
+    "claim_text": "The Pentagon is planning for AI companies to train on classified data, defense official says",
+    "source_url": "https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/",
+    "section": "Key Sources",
+    "text": "Source: MIT Technology Review - Original reporting. URL: https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/. Reliability: High - Established technology publication with direct sourcing from a defense official and expert commentary.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
   }
 ]
