@@ -181,7 +181,7 @@ def retrieve_node(state: PipelineState) -> dict[str, Any]:
         query_text = revised_query if revised_query else claim.text
         query = build_retrieval_query(query_text, graph_ctx)
         try:
-            hits = retriever.search(query, top_k=6)
+            hits = retriever.search(query, top_k=6, claim_id=claim.id)
             retrieval_hits[claim.id] = hits
             logger.info(
                 "[retrieve] %d hits for claim %s (top score: %.3f)",

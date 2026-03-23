@@ -43,13 +43,16 @@ class HybridRetriever:
     current cumulative store without any caching complexity.
     """
 
-    VECTOR_WEIGHT  = 0.60
-    KEYWORD_WEIGHT = 0.40
+    VECTOR_WEIGHT    = 0.60
+    KEYWORD_WEIGHT   = 0.40
     KIND_WEIGHTS = {
         "raw_source": 1.15,
         "summary": 0.95,
         "source_metadata": 0.75,
     }
+    # Chunks whose claim_id matches the current query claim score this much higher,
+    # biasing retrieval toward same-claim evidence before cross-run evidence.
+    SAME_CLAIM_BOOST = 1.25
 
     # BM25 parameters
     _K1 = 1.5   # term saturation
@@ -74,8 +77,20 @@ class HybridRetriever:
             sum(len(_tokenize(t)) for t in self._texts) / max(len(self._texts), 1)
         )
 
-    def search(self, query: str, top_k: int = 6) -> list[RetrievalHit]:
-        """Return top_k chunks ranked by hybrid score."""
+    def search(
+        self,
+        query: str,
+        top_k: int = 6,
+        claim_id: str | None = None,
+    ) -> list[RetrievalHit]:
+        """
+        Return top_k chunks ranked by hybrid score.
+
+        claim_id: when provided, chunks belonging to this claim receive a
+        SAME_CLAIM_BOOST multiplier so same-claim evidence is preferred over
+        cross-run evidence from unrelated claims before falling back to the
+        global store.
+        """
         if not self.chunks or self._matrix is None:
             return []
 
@@ -93,10 +108,22 @@ class HybridRetriever:
         v_norm = _minmax(raw_vector)
         k_norm = _minmax(raw_keyword)
         hybrid = self.VECTOR_WEIGHT * v_norm + self.KEYWORD_WEIGHT * k_norm
+
+        # ── Kind boost ────────────────────────────────────────────────────
         kind_boosts = np.array([
             self.KIND_WEIGHTS.get(chunk.chunk_kind, 1.0) for chunk in self.chunks
         ])
         hybrid = hybrid * kind_boosts
+
+        # ── Same-claim boost ──────────────────────────────────────────────
+        # Prioritise chunks from the current claim so cross-run vocabulary
+        # overlap doesn't contaminate results with unrelated prior evidence.
+        if claim_id:
+            same_claim = np.array([
+                self.SAME_CLAIM_BOOST if chunk.claim_id == claim_id else 1.0
+                for chunk in self.chunks
+            ])
+            hybrid = hybrid * same_claim
 
         hits = [
             RetrievalHit(
