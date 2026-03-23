@@ -60,6 +60,7 @@ class ResearchResult(BaseModel):
     claim_id: str
     findings: str
     sources:  list[dict] = Field(default_factory=list)
+    fetched_pages: list[dict] = Field(default_factory=list)
 
 
 class Verdict(BaseModel):
@@ -71,13 +72,13 @@ class Verdict(BaseModel):
     key_evidence: list[str]  = Field(default_factory=list)
 
 
-# ── RAG + Verification models (Assignment 2 additions) ────────────────────────
+# ── RAG + Verification models (additions) ────────────────────────
 
 class EvidenceChunk(BaseModel):
     """
     One chunk of evidence stored from a researched claim.
     Chunks are persisted across runs so the retriever can draw on
-    evidence accumulated over multiple daily cycles (Week 4 — Knowledge
+    evidence accumulated over multiple daily cycles (— Knowledge
     Representation / persistent context management).
     """
     chunk_id:   str
@@ -87,13 +88,14 @@ class EvidenceChunk(BaseModel):
     section:    str           # logical section label (e.g. "Evidence Assessment")
     text:       str           # chunk body (≤ 700 chars)
     date_slug:  str           # YYYY-MM-DD run date
+    chunk_kind: str = "summary"  # raw_source | summary | source_metadata
 
 
 class RetrievalHit(BaseModel):
     """
     One ranked result from the hybrid retriever.
     Carries both raw scores and the originating chunk so the Director
-    can cite the exact section that supports its verdict (Week 5).
+    can cite the exact section that supports its verdict .
     """
     chunk:         EvidenceChunk
     vector_score:  float   # TF-IDF cosine similarity (normalised 0-1)
@@ -103,7 +105,7 @@ class RetrievalHit(BaseModel):
 
 class VerifierReport(BaseModel):
     """
-    Output of the LLM-as-a-Judge pass (Week 7 — Evaluation).
+    Output of the LLM-as-a-Judge pass .
     Four rubric dimensions map directly to the RAGAS framework:
       groundedness     → faithfulness
       citation_score   → answer correctness
@@ -127,7 +129,7 @@ class DailyReport(BaseModel):
     """Complete report for one publishing cycle."""
     claims:           list[Claim]                     = Field(default_factory=list)
     verdicts:         list[Verdict]                   = Field(default_factory=list)
-    # Assignment 2 additions — RAG evidence and verifier scores
+    # RAG evidence and verifier scores
     retrieval_hits:   dict[str, list[RetrievalHit]]   = Field(default_factory=dict)
     verifier_reports: dict[str, VerifierReport]        = Field(default_factory=dict)
     generated_at:     str                             = Field(default_factory=_utcnow)
@@ -158,7 +160,7 @@ class PipelineState(BaseModel):
     verdicts:         list[Verdict]             = Field(default_factory=list)
     report:           Optional[DailyReport]     = None
 
-    # Assignment 2 additions — RAG + verification state
+    # RAG + verification state
     evidence_chunks:  dict[str, list[EvidenceChunk]]  = Field(default_factory=dict)
     retrieval_hits:   dict[str, list[RetrievalHit]]   = Field(default_factory=dict)
     graph_context:    dict[str, str]                  = Field(default_factory=dict)

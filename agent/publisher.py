@@ -81,6 +81,22 @@ class Publisher:
                     "confidence": round(v.confidence, 3),
                     "summary": v.summary,
                     "key_evidence": v.key_evidence,
+                    "retrieved_evidence": [
+                        {
+                            "chunk_id": hit.chunk.chunk_id,
+                            "chunk_kind": hit.chunk.chunk_kind,
+                            "section": hit.chunk.section,
+                            "source_url": hit.chunk.source_url,
+                            "hybrid_score": round(hit.hybrid_score, 3),
+                            "text": hit.chunk.text,
+                        }
+                        for hit in report.retrieval_hits.get(v.claim_id, [])[:5]
+                    ],
+                    "verifier_report": (
+                        report.verifier_reports[v.claim_id].model_dump()
+                        if v.claim_id in report.verifier_reports
+                        else None
+                    ),
                 }
                 for v in report.verdicts
             ],
@@ -99,8 +115,19 @@ class Publisher:
             evidence_items = "".join(
                 f"<li>{e}</li>" for e in verdict.key_evidence
             )
+            retrieved_hits = report.retrieval_hits.get(verdict.claim_id, [])
+            retrieved_items = "".join(
+                (
+                    f"<li><strong>{hit.chunk.chunk_kind}</strong> · "
+                    f"{hit.chunk.section} · "
+                    f"{(hit.chunk.source_url or 'unknown source')} "
+                    f"(score {hit.hybrid_score:.2f})"
+                    f"<div class=\"retrieved-text\">{hit.chunk.text}</div></li>"
+                )
+                for hit in retrieved_hits[:4]
+            )
 
-            # ── Verifier scores block (Assignment 2) ──────────────────────
+            # ── Verifier scores block ──────────────────────
             vr = report.verifier_reports.get(verdict.claim_id)
             if vr:
                 def _score_bar(label: str, score: float) -> str:
@@ -146,6 +173,10 @@ class Publisher:
               <details>
                 <summary>Key Evidence</summary>
                 <ul>{evidence_items}</ul>
+              </details>
+              <details>
+                <summary>Retrieved Evidence Chunks</summary>
+                <ul>{retrieved_items}</ul>
               </details>
               {verifier_html}
             </div>"""
@@ -235,6 +266,7 @@ def _page_template(title: str, body: str) -> str:
     .score-fill  {{ height: 100%; border-radius: 999px; transition: width .3s; }}
     .score-pct   {{ width: 2.5rem; text-align: right; color: var(--text); }}
     .retry-note  {{ margin-top: .4rem; color: #f97316; font-size: .82rem; }}
+    .retrieved-text {{ margin-top: .35rem; color: var(--muted); font-size: .8rem; line-height: 1.5; }}
   </style>
 </head>
 <body>

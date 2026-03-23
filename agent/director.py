@@ -45,6 +45,12 @@ AVOID:
 
 The goal is a balanced, varied daily report — not a single-topic feed.
 
+For verdict generation:
+- Treat retrieved evidence chunks as the primary source of truth.
+- Prefer raw source chunks over researcher summaries when there is tension.
+- Do not make claims that are not supported by the retrieved evidence.
+- Write key_evidence bullets so they reflect specific retrieved support, not vague summaries.
+
 Always respond with valid JSON matching the schema provided in each user message."""
 
 SELECTION_SCHEMA = {
@@ -120,15 +126,23 @@ class Director:
 
         rag_section = ""
         if hits:
+            raw_hits = [h for h in hits if h.chunk.chunk_kind == "raw_source"][:4]
+            support_hits = [h for h in hits if h.chunk.chunk_kind != "raw_source"][:2]
+            chosen_hits = raw_hits + [h for h in support_hits if h.chunk.chunk_id not in {r.chunk.chunk_id for r in raw_hits}]
             chunk_lines = "\n\n".join(
-                f"[{h.chunk.chunk_id}] {h.chunk.section} (score: {h.hybrid_score:.3f})\n{h.chunk.text}"
-                for h in hits[:5]
+                f"[{h.chunk.chunk_id}] kind={h.chunk.chunk_kind} section={h.chunk.section} "
+                f"source={h.chunk.source_url or 'unknown'} score={h.hybrid_score:.3f}\n{h.chunk.text}"
+                for h in chosen_hits[:6]
             )
-            rag_section = f"\n\nTop retrieved evidence chunks (ground your verdict in these):\n{chunk_lines}"
+            rag_section = (
+                "\n\nTop retrieved evidence chunks (use these as your main grounding context; "
+                "raw_source chunks are strongest):\n"
+                f"{chunk_lines}"
+            )
 
         response = self._chat(
             f"Claim: {claim.text}\n\n"
-            f"Research findings:\n{research.findings}\n\n"
+            f"Research findings (secondary context only):\n{research.findings}\n\n"
             f"Sources consulted:\n{json.dumps(research.sources, indent=2)}"
             f"{rag_section}\n\n"
             f"Respond with JSON matching schema:\n{json.dumps(VERDICT_SCHEMA)}"

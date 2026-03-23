@@ -1,9 +1,9 @@
 """
-verifier.py — LLM-as-a-Judge (Week 7: Evaluation)
+verifier.py — LLM-as-a-Judge 
 
 Runs a second GPT-4o call that independently evaluates the Director's
 Verdict against the retrieved evidence chunks. This is the "LLM-as-a-Judge"
-pattern required by Week 7: a separate model instance acting as an
+pattern required by a separate model instance acting as an
 objective evaluator of another model's output.
 
 Why a second model call instead of self-evaluation?
@@ -20,7 +20,7 @@ Rubric dimensions (maps to RAGAS framework):
 
 When should_retry is True, pipeline.py routes back to retrieve_evidence_node
 with a refined query built from missing_citations. This is the self-correcting
-generation loop (Week 5 × Week 7 intersection).
+generation loop .
 """
 
 from __future__ import annotations

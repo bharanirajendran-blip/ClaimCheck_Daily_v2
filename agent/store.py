@@ -1,5 +1,5 @@
 """
-store.py — Persistent Evidence Store (Week 4: Knowledge Representation)
+store.py — Persistent Evidence Store 
 
 Responsibilities:
   1. Receive a ResearchResult from the Claude Researcher
@@ -10,10 +10,10 @@ Responsibilities:
 
 Why persistent across runs?
   A single daily run yields 3 claims and ~15-30 chunks.
-  After a week of runs, the store holds 100+ chunks spanning multiple
+  After several runs, the store holds 100+ chunks spanning multiple
   topics and sources — retrieval becomes genuinely non-trivial and the
   system starts showing "context management" across time, not just
-  within a single day (the key Week 4 concept).
+  within a single day (the key concept).
 
 Chunking strategy:
   - Split findings by markdown section headings (## ...)
@@ -26,7 +26,6 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
-import re
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -91,6 +90,26 @@ def _chunk_research(
     # Determine primary source URL (first source if any, else empty)
     primary_url = research.sources[0].get("url", "") if research.sources else ""
 
+    # Store fetched source-page content first so retrieval can ground itself
+    # in raw evidence, not only in the researcher's summary prose.
+    for index, page in enumerate(research.fetched_pages, start=1):
+        url = page.get("url", "")
+        content = (page.get("content", "") or "").strip()
+        if not content:
+            continue
+        for part_index, text in enumerate(_split_long_text(content), start=1):
+            chunk_id = _make_id(research.claim_id, f"Fetched Source {index}.{part_index}", text)
+            chunks.append(EvidenceChunk(
+                chunk_id=chunk_id,
+                claim_id=research.claim_id,
+                claim_text=claim_text[:200],
+                source_url=url,
+                section=f"Fetched Source {index}.{part_index}",
+                text=text,
+                date_slug=date_slug,
+                chunk_kind="raw_source",
+            ))
+
     # Split findings into (section_heading, body) pairs
     sections = _split_sections(research.findings)
 
@@ -109,6 +128,7 @@ def _chunk_research(
             section=heading,
             text=text,
             date_slug=date_slug,
+            chunk_kind="summary",
         ))
 
     # Also store each cited source as a lightweight chunk (for graph edges)
@@ -128,6 +148,7 @@ def _chunk_research(
             section="Key Sources",
             text=text,
             date_slug=date_slug,
+            chunk_kind="source_metadata",
         ))
 
     return chunks
@@ -152,6 +173,16 @@ def _split_sections(text: str) -> list[tuple[str, str]]:
         pieces.append((current_heading, "\n".join(current_lines)))
 
     return [(h, b) for h, b in pieces if b.strip()]
+
+
+def _split_long_text(text: str) -> list[str]:
+    compact = text.strip()
+    if not compact:
+        return []
+    return [
+        compact[i:i + MAX_CHUNK_CHARS]
+        for i in range(0, len(compact), MAX_CHUNK_CHARS)
+    ]
 
 
 def _make_id(claim_id: str, section: str, text: str) -> str:

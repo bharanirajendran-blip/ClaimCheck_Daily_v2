@@ -1,5 +1,5 @@
 """
-retriever.py — Hybrid Evidence Retriever (Week 5: RAG 2.0)
+retriever.py — Hybrid Evidence Retriever 
 
 Combines two retrieval signals over the persistent evidence store:
 
@@ -17,7 +17,7 @@ Hybrid score = 0.60 * vector_score + 0.40 * keyword_score
 Both channels are min-max normalised before combining so neither
 dominates due to raw scale differences.
 
-Self-correcting retrieval (Week 5):
+Self-correcting retrieval :
   The pipeline calls HybridRetriever.search() twice when the verifier
   triggers a retry — once with the original claim text, once with a
   refined query that appends the verifier's missing-citation hints.
@@ -45,6 +45,11 @@ class HybridRetriever:
 
     VECTOR_WEIGHT  = 0.60
     KEYWORD_WEIGHT = 0.40
+    KIND_WEIGHTS = {
+        "raw_source": 1.15,
+        "summary": 0.95,
+        "source_metadata": 0.75,
+    }
 
     # BM25 parameters
     _K1 = 1.5   # term saturation
@@ -88,6 +93,10 @@ class HybridRetriever:
         v_norm = _minmax(raw_vector)
         k_norm = _minmax(raw_keyword)
         hybrid = self.VECTOR_WEIGHT * v_norm + self.KEYWORD_WEIGHT * k_norm
+        kind_boosts = np.array([
+            self.KIND_WEIGHTS.get(chunk.chunk_kind, 1.0) for chunk in self.chunks
+        ])
+        hybrid = hybrid * kind_boosts
 
         hits = [
             RetrievalHit(
@@ -98,8 +107,15 @@ class HybridRetriever:
             )
             for i, chunk in enumerate(self.chunks)
         ]
-        hits.sort(key=lambda h: h.hybrid_score, reverse=True)
-        return hits[:top_k]
+        hits.sort(
+            key=lambda h: (
+                h.hybrid_score,
+                1 if h.chunk.chunk_kind == "raw_source" else 0,
+                h.vector_score,
+            ),
+            reverse=True,
+        )
+        return self._diversify_hits(hits, top_k=top_k)
 
     # ── BM25 ──────────────────────────────────────────────────────────────
 
@@ -119,6 +135,32 @@ class HybridRetriever:
         n = len(self.chunks)
         df = sum(1 for c in self.chunks if term in _tokenize(c.text))
         return math.log((n - df + 0.5) / (df + 0.5) + 1)
+
+    def _diversify_hits(self, hits: list[RetrievalHit], top_k: int) -> list[RetrievalHit]:
+        """Prefer a mix of raw source evidence and summaries, but bias toward raw chunks."""
+        selected: list[RetrievalHit] = []
+        raw_hits = [hit for hit in hits if hit.chunk.chunk_kind == "raw_source"]
+        other_hits = [hit for hit in hits if hit.chunk.chunk_kind != "raw_source"]
+
+        for hit in raw_hits[: min(4, top_k)]:
+            selected.append(hit)
+
+        for hit in other_hits:
+            if len(selected) >= top_k:
+                break
+            selected.append(hit)
+
+        if len(selected) < top_k:
+            seen = {hit.chunk.chunk_id for hit in selected}
+            for hit in hits:
+                if len(selected) >= top_k:
+                    break
+                if hit.chunk.chunk_id in seen:
+                    continue
+                selected.append(hit)
+                seen.add(hit.chunk.chunk_id)
+
+        return selected[:top_k]
 
 
 # ── Utilities ──────────────────────────────────────────────────────────────────

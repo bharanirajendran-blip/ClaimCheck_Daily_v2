@@ -1,5 +1,5 @@
 """
-graph.py — Knowledge Graph over Claims and Sources (Week 6: GraphRAG)
+graph.py — Knowledge Graph over Claims and Sources 
 
 Builds and queries a lightweight directed graph using networkx.
 No Neo4j server required — the graph is serialised to JSON and
@@ -16,7 +16,7 @@ Graph structure:
     claim  → claim   (RELATED_TO)    two claims share a common source domain
     source → claim   (SUPPORTS)      a source contributed evidence for a claim
 
-Why this matters (Week 6 concept):
+Why this matters :
   Standard RAG retrieves the top-k most similar chunks for a single query.
   GraphRAG lets the agent "see" relationships across the entire dataset:
     - "Have we checked a claim from this source before?"

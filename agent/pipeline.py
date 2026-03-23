@@ -23,6 +23,7 @@ State is a Pydantic PipelineState model — every transition is validated.
 
 from __future__ import annotations
 
+import hashlib
 import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -33,7 +34,7 @@ from langgraph.graph import END, START, StateGraph
 from .director import Director
 from .feeds import harvest_claims
 from .graph import get_related_context, update_graph
-from .models import DailyReport, PipelineState, ResearchResult
+from .models import Claim, DailyReport, PipelineState, ResearchResult
 from .publisher import Publisher
 from .researcher import Researcher
 from .retriever import HybridRetriever, build_retrieval_query
@@ -67,6 +68,9 @@ def _get_researcher() -> Researcher:
 
 def harvest_node(state: PipelineState) -> dict[str, Any]:
     """Node 1 — ingest RSS/Atom feeds and populate candidate claims."""
+    if state.selected:
+        logger.info("[harvest] Manual claim mode detected — skipping feed harvest.")
+        return {"candidates": state.selected}
     logger.info("[harvest] Parsing feeds from %s…", state.feeds_path)
     candidates = harvest_claims(state.feeds_path)
     logger.info("[harvest] %d candidate claims harvested.", len(candidates))
@@ -75,6 +79,9 @@ def harvest_node(state: PipelineState) -> dict[str, Any]:
 
 def select_node(state: PipelineState) -> dict[str, Any]:
     """Node 2 — Director (GPT) scores and selects the day's best claims."""
+    if state.selected:
+        logger.info("[select] Manual claim already selected — skipping Director selection.")
+        return {"selected": state.selected}
     if not state.candidates:
         logger.warning("[select] No candidates to select from.")
         return {"selected": []}
@@ -359,16 +366,31 @@ def run_pipeline(
     outputs_dir: str | Path = "outputs",
     max_workers: int = 3,
     log_level:   str = "INFO",
+    manual_claim: str | None = None,
 ) -> DailyReport:
     """Compile and invoke the LangGraph; return the final DailyReport."""
     setup_logging(log_level)
     logger.info("=== ClaimCheck Daily pipeline starting (LangGraph) ===")
+
+    selected: list[Claim] = []
+    candidates: list[Claim] = []
+    if manual_claim:
+        claim = Claim(
+            id=hashlib.md5(manual_claim.encode()).hexdigest()[:8],
+            text=manual_claim,
+            source="Manual Input",
+            feed_name="Manual Input",
+        )
+        selected = [claim]
+        candidates = [claim]
 
     initial_state = PipelineState(
         feeds_path=str(feeds_path),
         docs_dir=str(docs_dir),
         outputs_dir=str(outputs_dir),
         max_workers=max_workers,
+        candidates=candidates,
+        selected=selected,
     )
 
     final_state = build_graph().invoke(initial_state)

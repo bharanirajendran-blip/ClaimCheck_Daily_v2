@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import logging
 import os
+import re
 import textwrap
 from dataclasses import dataclass, field
 
@@ -120,13 +121,14 @@ class Researcher:
         """Deep-research a single claim using tool-use loop, return findings."""
         logger.info("Researcher investigating claim %s: %s", claim.id, claim.text[:80])
 
-        raw_text = self._run_tool_loop(claim)
+        raw_text, fetched_pages = self._run_tool_loop(claim)
         sources = self._extract_sources(raw_text)
 
         return ResearchResult(
             claim_id=claim.id,
             findings=raw_text,
             sources=sources,
+            fetched_pages=fetched_pages,
         )
 
     # ------------------------------------------------------------------
@@ -134,7 +136,7 @@ class Researcher:
     # ------------------------------------------------------------------
 
     @retry(times=3, delay=3)
-    def _run_tool_loop(self, claim: Claim) -> str:  # noqa: C901
+    def _run_tool_loop(self, claim: Claim) -> tuple[str, list[dict]]:  # noqa: C901
         """
         Agentic loop:
           1. Send claim + tools to Claude
@@ -153,6 +155,7 @@ class Researcher:
                 ),
             }
         ]
+        fetched_pages: list[dict] = []
 
         for round_num in range(1, MAX_TOOL_ROUNDS + 1):
             kwargs: dict = dict(
@@ -180,7 +183,7 @@ class Researcher:
                     for block in response.content
                     if hasattr(block, "text")
                 ]
-                return "\n".join(parts).strip()
+                return "\n".join(parts).strip(), fetched_pages
 
             # ── Claude wants to use a tool ────────────────────────────
             if response.stop_reason == "tool_use":
@@ -204,6 +207,11 @@ class Researcher:
                             "[tool] Claude calling %s with %s", block.name, block.input
                         )
                         result_text = execute_tool(block.name, block.input)
+                        if block.name == "fetch_url":
+                            fetched_pages.append({
+                                "url": block.input.get("url", ""),
+                                "content": result_text,
+                            })
                         tool_results.append({
                             "type": "tool_result",
                             "tool_use_id": block.id,
@@ -219,10 +227,10 @@ class Researcher:
             parts = [
                 block.text for block in response.content if hasattr(block, "text")
             ]
-            return "\n".join(parts).strip()
+            return "\n".join(parts).strip(), fetched_pages
 
         logger.warning("Tool loop hit max rounds (%d) for claim %s", MAX_TOOL_ROUNDS, claim.id)
-        return "Research incomplete: maximum tool rounds reached."
+        return "Research incomplete: maximum tool rounds reached.", fetched_pages
 
     # ------------------------------------------------------------------
     # Source extraction helper
@@ -230,15 +238,55 @@ class Researcher:
 
     @staticmethod
     def _extract_sources(raw: str) -> list[dict]:
-        """Best-effort extraction of JSON source objects from the Key Sources section."""
+        """Best-effort extraction of sources from JSON snippets or markdown tables."""
         import json
-        import re
 
-        sources = []
-        pattern = r'\{[^{}]*"title"[^{}]*\}'
-        for match in re.finditer(pattern, raw, re.DOTALL):
+        sources: list[dict] = []
+        seen: set[tuple[str, str]] = set()
+
+        json_pattern = r'\{[^{}]*"title"[^{}]*\}'
+        for match in re.finditer(json_pattern, raw, re.DOTALL):
             try:
-                sources.append(json.loads(match.group()))
+                item = json.loads(match.group())
             except json.JSONDecodeError:
-                pass
+                continue
+            title = str(item.get("title", "")).strip()
+            url = str(item.get("url", "")).strip()
+            if title or url:
+                key = (title, url)
+                if key not in seen:
+                    seen.add(key)
+                    sources.append({
+                        "title": title,
+                        "url": url,
+                        "reliability": str(item.get("reliability", "")).strip(),
+                    })
+
+        in_key_sources = False
+        for line in raw.splitlines():
+            stripped = line.strip()
+            if stripped.lower().startswith("## key sources"):
+                in_key_sources = True
+                continue
+            if in_key_sources and stripped.startswith("## "):
+                break
+            if not in_key_sources or "|" not in stripped:
+                continue
+            if stripped.startswith("| Title") or stripped.startswith("|-------"):
+                continue
+
+            cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+            if len(cells) < 3:
+                continue
+            title, url, reliability = cells[:3]
+            reliability = reliability.replace("**", "").strip()
+            key = (title, url)
+            if title and key not in seen:
+                seen.add(key)
+                sources.append({
+                    "title": title,
+                    "url": "" if url.lower() == "referenced in article" else url,
+                    "reliability": reliability,
+                })
+
         return sources
