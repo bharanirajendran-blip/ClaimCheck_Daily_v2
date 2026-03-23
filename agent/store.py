@@ -193,11 +193,15 @@ def _make_id(claim_id: str, section: str, text: str) -> str:
 # ── Persistence helpers ────────────────────────────────────────────────────────
 
 def _upsert_json_list(path: Path, new_items: list[dict]) -> None:
-    existing: list[dict] = []
+    """Write new_items to path, deduplicating by chunk_id so repeated same-day
+    runs don't accumulate duplicate entries in the daily evidence file."""
+    existing: dict[str, dict] = {}
     if path.exists():
-        existing = json.loads(path.read_text(encoding="utf-8"))
-    existing.extend(new_items)
-    path.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
+        for item in json.loads(path.read_text(encoding="utf-8")):
+            existing[item["chunk_id"]] = item
+    for item in new_items:
+        existing[item["chunk_id"]] = item
+    path.write_text(json.dumps(list(existing.values()), indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def _upsert_cumulative(path: Path, new_chunks: list[EvidenceChunk]) -> None:
