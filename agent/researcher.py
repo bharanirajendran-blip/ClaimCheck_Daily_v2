@@ -41,11 +41,17 @@ RESEARCH_SYSTEM_PROMPT = textwrap.dedent("""\
 
     IMPORTANT RULES:
     - Fetch the source URL provided first. That is your primary evidence.
-    - You may fetch ONE additional corroborating source if needed.
-    - After fetching the source article, STOP fetching and write your final analysis.
-    - Do NOT chase dead links or keep fetching if URLs return errors.
-    - Base your verdict on what you successfully read. If the source article loaded,
-      you have enough to write a thorough analysis — do so immediately.
+    - Always fetch at least ONE corroborating source from a DIFFERENT domain than
+      the primary source. This is required, not optional — single-source verdicts
+      are weaker and less trustworthy.
+    - For controversial or contested claims, fetch a THIRD source from yet another
+      domain (e.g. an independent fact-checker, government database, or academic
+      reference). Use your judgment on whether the claim warrants a third source.
+    - Do NOT fetch more than 3 sources total — stop after a primary + 1-2 corroborating.
+    - Do NOT chase dead links or keep fetching if URLs return errors; move on immediately.
+    - Prefer authoritative domains: government (.gov), academic (.edu), established
+      news outlets, or recognized reference sources (Britannica, WHO, etc.).
+    - Base your verdict on what you successfully read.
 
     Structure your final response as follows:
 

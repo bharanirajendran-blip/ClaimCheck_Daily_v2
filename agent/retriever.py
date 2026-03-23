@@ -137,28 +137,72 @@ class HybridRetriever:
         return math.log((n - df + 0.5) / (df + 0.5) + 1)
 
     def _diversify_hits(self, hits: list[RetrievalHit], top_k: int) -> list[RetrievalHit]:
-        """Prefer a mix of raw source evidence and summaries, but bias toward raw chunks."""
+        """
+        Select top-k chunks balancing two diversity axes:
+          1. Kind diversity  — bias toward raw_source (up to 4), then fill with others
+          2. Domain diversity — prefer chunks from distinct source domains so the
+                               verdict rests on multiple independent sources
+
+        Selection pass:
+          - First, pick the best raw_source chunk from each unique domain (up to 4).
+          - Then fill remaining slots with the next-best chunks, preferring new domains.
+          - Finally, pad with any remaining unseen chunks if slots are still open.
+        """
+        def _domain(url: str) -> str:
+            """Extract bare domain (e.g. 'factcheck.org') from a URL string."""
+            url = url or ""
+            url = re.sub(r"^https?://", "", url).split("/")[0]
+            # strip leading www.
+            return re.sub(r"^www\.", "", url).lower() or "_unknown_"
+
         selected: list[RetrievalHit] = []
-        raw_hits = [hit for hit in hits if hit.chunk.chunk_kind == "raw_source"]
-        other_hits = [hit for hit in hits if hit.chunk.chunk_kind != "raw_source"]
+        seen_ids: set[str] = set()
+        seen_domains: set[str] = set()
 
-        for hit in raw_hits[: min(4, top_k)]:
-            selected.append(hit)
+        raw_hits   = [h for h in hits if h.chunk.chunk_kind == "raw_source"]
+        other_hits = [h for h in hits if h.chunk.chunk_kind != "raw_source"]
 
+        # Pass 1: best raw_source chunk per domain, up to 4 slots
+        for hit in raw_hits:
+            if len(selected) >= min(4, top_k):
+                break
+            d = _domain(hit.chunk.source_url)
+            if hit.chunk.chunk_id in seen_ids:
+                continue
+            # Prefer new domain; allow repeat domain only if we'd otherwise stall
+            if d not in seen_domains or len(seen_domains) >= 3:
+                selected.append(hit)
+                seen_ids.add(hit.chunk.chunk_id)
+                seen_domains.add(d)
+
+        # If pass 1 left raw_source slots unfilled (all same domain), top-up
+        for hit in raw_hits:
+            if len(selected) >= min(4, top_k):
+                break
+            if hit.chunk.chunk_id not in seen_ids:
+                selected.append(hit)
+                seen_ids.add(hit.chunk.chunk_id)
+                seen_domains.add(_domain(hit.chunk.source_url))
+
+        # Pass 2: fill remaining slots with non-raw chunks, preferring new domains
         for hit in other_hits:
             if len(selected) >= top_k:
                 break
-            selected.append(hit)
-
-        if len(selected) < top_k:
-            seen = {hit.chunk.chunk_id for hit in selected}
-            for hit in hits:
-                if len(selected) >= top_k:
-                    break
-                if hit.chunk.chunk_id in seen:
-                    continue
+            if hit.chunk.chunk_id in seen_ids:
+                continue
+            d = _domain(hit.chunk.source_url)
+            if d not in seen_domains:
                 selected.append(hit)
-                seen.add(hit.chunk.chunk_id)
+                seen_ids.add(hit.chunk.chunk_id)
+                seen_domains.add(d)
+
+        # Pass 3: pad with any remaining unseen chunks regardless of domain
+        for hit in hits:
+            if len(selected) >= top_k:
+                break
+            if hit.chunk.chunk_id not in seen_ids:
+                selected.append(hit)
+                seen_ids.add(hit.chunk.chunk_id)
 
         return selected[:top_k]
 
