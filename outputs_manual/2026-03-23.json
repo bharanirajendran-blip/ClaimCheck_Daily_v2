@@ -1,0 +1,72 @@
+{
+  "date": "2026-03-23",
+  "generated_at": "2026-03-23T11:46:24Z",
+  "results": [
+    {
+      "claim": "Apollo 11 landed on the Moon in 1969.",
+      "source": "Manual Input",
+      "verdict": "TRUE",
+      "confidence": 1.0,
+      "summary": "The claim that Apollo 11 landed on the Moon in 1969 is accurate and verified by multiple authoritative sources. Apollo 11 was a United States spaceflight that successfully landed astronauts Neil Armstrong and Buzz Aldrin on the Moon on July 20, 1969, while Michael Collins remained in lunar orbit.",
+      "key_evidence": [
+        "Apollo 11, the first space mission to put people on the Moon, was launched on July 16, 1969. It succeeded in its objective by landing Neil Armstrong and Buzz Aldrin on the Moon on July 20, 1969. (Source: Britannica)",
+        "The lunar module Eagle of the Apollo 11 mission landed on the Moon on July 20, 1969. Neil Armstrong and Buzz Aldrin became the first people to land on the Moon and walk on the lunar surface. (Source: Britannica)",
+        "NASA's official mission page documents Apollo 11 as part of their historical missions archive, confirming the mission's success and significance."
+      ],
+      "retrieved_evidence": [
+        {
+          "chunk_id": "243b20353a1a",
+          "chunk_kind": "raw_source",
+          "section": "Fetched Source 2.5",
+          "source_url": "https://www.britannica.com/event/Apollo-11",
+          "hybrid_score": 0.836,
+          "text": "estions\n            \n \n When was Apollo 11 launched? \n \nApollo 11, the first space mission to put people on the Moon, was launched on July 16, 1969. Almost every major aspect of the flight of Apollo 11 was witnessed via television by hundreds of millions of people in nearly every part of the globe, until splashdown in the Pacific Ocean on July 24.\n \n \n What was the mission objective of Apollo 11? \n \nApollo 11’s mission objective was to land \nastronauts\n on the \nMoon\n and return them safely back to \nEarth\n. It succeeded in its objective by landing \nNeil Armstrong\n and \nBuzz Aldrin\n on the Moon on July 20, 1969.\n \n \n Who were the crew members of Apollo 11? \n \nApollo 11’s crew members were comm"
+        },
+        {
+          "chunk_id": "18379ec24cba",
+          "chunk_kind": "raw_source",
+          "section": "Fetched Source 2.6",
+          "source_url": "https://www.britannica.com/event/Apollo-11",
+          "hybrid_score": 0.769,
+          "text": "ander \nNeil Armstrong\n, lunar module pilot \nBuzz Aldrin\n, and command module pilot \nMichael Collins\n.\n \n \n When did Apollo 11 land on the Moon? \n \nThe lunar module \nEagle\n of the Apollo 11 mission landed on the Moon on July 20, 1969. \nNeil Armstrong\n and \nBuzz Aldrin\n became the first people to land on the Moon and walk on the lunar surface.\n \n \n How fast did Apollo 11 travel? \n \nThe fastest speed Apollo 11 achieved was 39,715 kilometers (24,678 miles) per hour when the command module reentered \n\n[Content truncated]"
+        },
+        {
+          "chunk_id": "5e8114cc84a8",
+          "chunk_kind": "raw_source",
+          "section": "Fetched Source 2.3",
+          "source_url": "https://www.britannica.com/event/Apollo-11",
+          "hybrid_score": 0.591,
+          "text": "         Feedback\n                    \n\n\t\n                        External Websites\n                    \n\n\t\t\tFeedback\n\t\t\n\nThank you for your feedback\n\nOur editors will review what you’ve submitted and determine whether to revise the article.\n\n                    External Websites\n                \n\nSpace.com - Apollo 11: First Men on the Moon\n\nBBC Newsround - Apollo 11 Moon landing: Everything you need to know\n\nSmithsonian National Air and Space Museum - Apollo 11\n\nRoyal Museums Greenwich - Apollo 11 crew\n\nNASA - Apollo 11\n\nThe Planetary Society - Apollo 11\n\nBritannica Websites\n\nArticles from Britannica Encyclopedias for elementary and high school students.\n\nApollo 11 - Student Encyclopedia ("
+        },
+        {
+          "chunk_id": "98534d866c5c",
+          "chunk_kind": "raw_source",
+          "section": "Fetched Source 2.4",
+          "source_url": "https://www.britannica.com/event/Apollo-11",
+          "hybrid_score": 0.383,
+          "text": "Ages 11 and up)\n\nBuzz Aldrin on the Moon\n\nU.S. astronaut Buzz Aldrin walking on the Moon, July 20, 1969.\n\n(more)\n\nApollo 11\n\nUnited States spaceflight\n\n  \n  Ask Anything\n\n  \n  Quick Summary\n\n  \n  Homework Help\n\nWritten and fact-checked by\n\nBritannica Editors\n\nEncyclopaedia Britannica's editors oversee subject areas in which they have extensive knowledge, whether from years of experience gained by working on that content or via study for an advanced degree....\n\n    Britannica Editors\n\nLast updated\n\nFeb. 20, 2026\n\n•\nHistory\n\nBritannica AI\n\n  \n  Ask Anything\n\n  \n  Quick Summary\n\n\t\n\t\t\t\tTable of Contents\n\t\t\n\n\t\n\t\t\t\tTable of Contents\n\t\t\n\n  \n  Quick Summary\n\n  \n  Ask Anything\n\n                Top Qu"
+        },
+        {
+          "chunk_id": "ba1053203241",
+          "chunk_kind": "summary",
+          "section": "Verdict: ✅ TRUE",
+          "source_url": "https://www.britannica.com/event/Apollo-11",
+          "hybrid_score": 0.95,
+          "text": "The claim is **accurate and verified**. Apollo 11 landed on the Moon on July 20, 1969, making it one of the most significant achievements in human history."
+        }
+      ],
+      "verifier_report": {
+        "groundedness_score": 1.0,
+        "citation_score": 1.0,
+        "no_contradiction_score": 1.0,
+        "no_assumption_score": 1.0,
+        "overall_score": 1.0,
+        "unsupported_statements": [],
+        "contradictions": [],
+        "missing_citations": [],
+        "rewrite_suggestion": "",
+        "should_retry": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "type": "claim",
+      "text": "Apollo 11 landed on the Moon in 1969.",
+      "id": "96cc84d3"
+    },
+    {
+      "type": "source",
+      "id": "nasa.gov"
+    },
+    {
+      "type": "source",
+      "id": "britannica.com"
+    },
+    {
+      "type": "source",
+      "id": "airandspace.si.edu (referenced)"
+    }
+  ],
+  "links": [
+    {
+      "rel": "CITES",
+      "source": "96cc84d3",
+      "target": "nasa.gov"
+    },
+    {
+      "rel": "CITES",
+      "source": "96cc84d3",
+      "target": "britannica.com"
+    },
+    {
+      "rel": "CITES",
+      "source": "96cc84d3",
+      "target": "airandspace.si.edu (referenced)"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "nasa.gov",
+      "target": "96cc84d3"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "britannica.com",
+      "target": "96cc84d3"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "airandspace.si.edu (referenced)",
+      "target": "96cc84d3"
+    }
+  ]
+}
