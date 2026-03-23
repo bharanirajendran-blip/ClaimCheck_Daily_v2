@@ -192,6 +192,24 @@ open docs/$(date +%Y-%m-%d).html      # macOS — open today's report
 
 ---
 
+## Automated Daily Run (GitHub Actions)
+
+The pipeline is configured to run automatically every day at 08:00 UTC via `.github/workflows/daily.yml`. The workflow is **currently disabled** to avoid unintended API spend on a public repo.
+
+**To enable automatic runs:**
+1. Make the repo private (Settings → General → Danger Zone → Change visibility)
+2. Add your API keys as GitHub Secrets (Settings → Secrets and variables → Actions → New repository secret):
+   - `ANTHROPIC_API_KEY`
+   - `OPENAI_API_KEY`
+3. Re-enable the workflow (Actions tab → select the workflow → Enable workflow)
+
+**To disable automatic runs:**
+- Go to Actions tab → select the daily workflow → Disable workflow
+
+HTML reports are published to GitHub Pages automatically after each successful run. Manual `python run.py` runs on your local machine are unaffected by the workflow state.
+
+---
+
 ## Troubleshooting
 
 **`ModuleNotFoundError: sklearn` or `networkx`**
