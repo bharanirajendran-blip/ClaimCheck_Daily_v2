@@ -65,7 +65,7 @@
     "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
     "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
     "section": "Key Sources",
-    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| FactCheck.org - EPA's Misleading Claim Analysis | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** - Nonpartisan fact-checking organization affiliated with the Annenberg Public Policy Center; cites primary documents and named expert sources |\n| EPA Regulatory Impact Analysis | Referenced in article | **High** - Primary government document |\n| Expert testimony (Jason Schwartz, NYU; Kenneth Gillingham, Yale) | Quoted in article | **High** - Credentialed academic experts in regulatory policy and economics |\n\n---",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| FactCheck.org - EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings' | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** - FactCheck.org is an established, nonpartisan fact-checking organization affiliated with the Annenberg Public Policy Center |\n\n---",
     "date_slug": "2026-03-23",
     "chunk_kind": "summary"
   },
@@ -515,7 +515,7 @@
     "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
     "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
     "section": "Key Sources",
-    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| \"Most people get food's environmental impact completely wrong, study finds\" - Science Daily | https://www.sciencedaily.com/releases/2026/03/260323005528.htm | **Medium-High** (reputable science news aggregator, but secondary source; original journal article not independently verified) |\n\n---\n\n**Verdict**: The claim is **largely supported**. A real study from the University of Nottingham, published in a peer-reviewed journal, does find that people have systematic misconceptions about food's environmental impact. However, the headline phrase \"completely wrong\" is somewhat exaggerated—the study identifies *specific* areas of misunder",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| \"Most people get food's environmental impact completely wrong, study finds\" - Science Daily | https://www.sciencedaily.com/releases/2026/03/260323005528.htm | **Medium-High** (reputable science news aggregator, but secondary source) |\n\n---\n\n**Verdict**: The claim is **substantially supported** by the source article. A peer-reviewed study from the University of Nottingham did find that people systematically misunderstand food's environmental impact, relying on oversimplified mental shortcuts. The word \"completely\" in the headline is slight editorial exaggeration—the study shows *consistent patterns of misconception* rather than tot",
     "date_slug": "2026-03-23",
     "chunk_kind": "summary"
   },
@@ -525,7 +525,7 @@
     "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
     "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
     "section": "Key Sources",
-    "text": "Source: \"Most people get food's environmental impact completely wrong, study finds\" - Science Daily. URL: https://www.sciencedaily.com/releases/2026/03/260323005528.htm. Reliability: Medium-High (reputable science news aggregator, but secondary source; original journal article not independently verified).",
+    "text": "Source: \"Most people get food's environmental impact completely wrong, study finds\" - Science Daily. URL: https://www.sciencedaily.com/releases/2026/03/260323005528.htm. Reliability: Medium-High (reputable science news aggregator, but secondary source).",
     "date_slug": "2026-03-23",
     "chunk_kind": "source_metadata"
   },
@@ -720,16 +720,6 @@
     "chunk_kind": "raw_source"
   },
   {
-    "chunk_id": "c21d9fbb1d74",
-    "claim_id": "8e1baa46",
-    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
-    "source_url": "https://www.nytimes.com/2026/02/12/climate/epa-endangerment-finding-revoked.html",
-    "section": "Fetched Source 3.1",
-    "text": "Error fetching page: HTTP 403",
-    "date_slug": "2026-03-23",
-    "chunk_kind": "raw_source"
-  },
-  {
     "chunk_id": "2f5d89690662",
     "claim_id": "8e1baa46",
     "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
@@ -810,26 +800,6 @@
     "chunk_kind": "source_metadata"
   },
   {
-    "chunk_id": "3831785815bd",
-    "claim_id": "d763eb04",
-    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
-    "source_url": "https://www.nottingham.ac.uk/news/food-environmental-impact-study-2026",
-    "section": "Fetched Source 2.1",
-    "text": "Error fetching page: HTTP 404",
-    "date_slug": "2026-03-23",
-    "chunk_kind": "raw_source"
-  },
-  {
-    "chunk_id": "ac43d6dbe3c5",
-    "claim_id": "d763eb04",
-    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
-    "source_url": "https://www.sciencedirect.com/journal/journal-of-cleaner-production",
-    "section": "Fetched Source 3.1",
-    "text": "Error fetching page: HTTP 403",
-    "date_slug": "2026-03-23",
-    "chunk_kind": "raw_source"
-  },
-  {
     "chunk_id": "0fe3f4dba31f",
     "claim_id": "d763eb04",
     "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
@@ -855,7 +825,7 @@
     "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
     "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
     "section": "Evidence Assessment",
-    "text": "The Science Daily article provides substantial detail about a study conducted by researchers at the **University of Nottingham's School of Psychology**. The study involved **168 UK participants** who were asked to sort supermarket foods into environmental impact categories. The research was published in the **Journal of Cleaner Production**, a peer-reviewed academic journal.\n\nThe headline claim—that \"most people get food's environmental impact completely wrong\"—is broadly supported by the study's findings, though \"completely wrong\" is editorial language. The actual findings are more nuanced: participants relied on two main heuristics (animal vs. plant, and level of processing) that led to **",
+    "text": "The Science Daily article provides substantial detail about a study conducted by researchers at the **University of Nottingham's School of Psychology**, published in the **Journal of Cleaner Production** (a peer-reviewed academic journal). The study involved 168 UK participants who were asked to sort supermarket foods into environmental impact categories.\n\nThe claim that \"most people get food's environmental impact completely wrong\" is **broadly supported** by the article, though the headline is somewhat simplified. The study found consistent patterns of misconception rather than universal wrongness:\n\n**Key findings from the source:**\n- People rely on two heuristics: (1) animal vs. plant ori",
     "date_slug": "2026-03-23",
     "chunk_kind": "summary"
   },
@@ -1045,7 +1015,7 @@
     "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
     "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
     "section": "Contradicting evidence",
-    "text": "- No contradicting evidence found regarding the basic facts of the competition\n- The article itself includes appropriate skepticism: experts acknowledge winning is difficult, and outcomes remain uncertain",
+    "text": "- No contradicting evidence found regarding the basic facts of the competition\n- However, experts quoted in the article express significant doubt about whether anyone will win the grand prize, noting the challenge may be too difficult given current technology",
     "date_slug": "2026-03-23",
     "chunk_kind": "summary"
   },
@@ -1065,7 +1035,7 @@
     "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
     "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
     "section": "Key Sources",
-    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| MIT Technology Review - Q4Bio Competition Report | https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/ | **High** - Established technology journalism outlet with on-site reporting |\n| Wellcome Leap - Official Q4Bio Program Page | https://wellcomeleap.org/q4bio/ | **High** - Primary source from the organization running the competition |\n\n---\n\n**Verdict**: The claim is **accurately framed and well-supported**. The headline poses a legitimate question about quantum computing's healthcare potential, correctly noting that a well-funded competition wil",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| MIT Technology Review: \"A $5 million prize awaits proof that quantum computers can solve health care problems\" | https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/ | **High** - Established tech publication with direct reporting from the quantum computing lab |\n| Wellcome Leap Q4Bio Official Program Page | https://wellcomeleap.org/q4bio/ | **High** - Official primary source from the organization running the competition |\n\n---\n\n**Verdict:** The claim is **accurately framed as an open question**. The Q4Bio competition and its $5M prize are real and",
     "date_slug": "2026-03-23",
     "chunk_kind": "summary"
   },
@@ -1086,6 +1056,696 @@
     "source_url": "https://wellcomeleap.org/q4bio/",
     "section": "Key Sources",
     "text": "Source: Wellcome Leap - Official Q4Bio Program Page. URL: https://wellcomeleap.org/q4bio/. Reliability: High - Primary source from the organization running the competition.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "7dac33da7a68",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Overview",
+    "text": "The EPA URLs are returning errors. I'll proceed with my analysis based on the detailed FactCheck.org article, which is itself a reliable fact-checking source and contains substantial detail about the EPA's claims and calculations.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "877ded8a8c8a",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Sub-questions",
+    "text": "1. What is the source of the EPA's $1.3 trillion \"savings\" claim?\n2. How was the $1.3 trillion figure calculated?\n3. Does the $1.3 trillion represent net savings or only one side of a cost-benefit equation?\n4. What are the benefits of the emissions standards that may have been excluded from the calculation?\n5. What do independent experts say about this framing?\n6. What does the EPA's own regulatory impact analysis show when benefits are included?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "aff1cac7d017",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Evidence Assessment",
+    "text": "The FactCheck.org article provides a thorough, detailed analysis of the EPA's $1.3 trillion claim. According to the article, the figure originates from the EPA's regulatory impact analysis related to the February 2026 revocation of the 2009 endangerment finding, which allowed the agency to regulate greenhouse gases from vehicles.\n\nThe $1.3 trillion figure is composed of approximately **$1.1 trillion in avoided vehicle technology costs** and **$200 billion in avoided electric vehicle charger and equipment costs** projected over the period 2027-2055.\n\nHowever, the article establishes that this figure is fundamentally misleading because it represents only the **costs** of the emissions standard",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "9fc118ca9cef",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Supporting evidence",
+    "text": "- **The $1.3 trillion is a real figure from EPA documents**: It does appear in the EPA's regulatory impact analysis and official communications, so the number itself is not fabricated.\n- **The claim has been consistently used by officials**: EPA Administrator Lee Zeldin, President Trump, OMB Director Russell Vought, and White House Press Secretary Karoline Leavitt have all cited this figure.\n- **The breakdown is documented**: $1.1 trillion in vehicle technology costs + $200 billion in EV charger/equipment costs over 2027-2055.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "13343b7757fc",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Contradicting evidence",
+    "text": "- **The figure excludes all benefits of the regulation**: Fuel savings, maintenance savings, health benefits, and environmental benefits are not factored in.\n- **EPA's own analysis suggests net cost, not savings**: When some benefits are included (excluding health/environmental), the EPA's calculations show repealing the standards could cost Americans $180 billion.\n- **Expert consensus calls the framing misleading**: Multiple independent regulatory and economics experts characterized the $1.3 trillion claim as biased and an incomplete representation of the policy's effects.\n- **Presentation is unprecedented in its one-sidedness**: An economist noted this level of focus on only costs in offic",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "35d7e6ae1201",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Caveats & Missing Context",
+    "text": "The FactCheck.org article is truncated, so the full scope of the EPA's regulatory impact analysis and all modeled scenarios were not visible. The direct EPA sources I attempted to access returned 404 errors, preventing independent verification of the primary documents. However, the FactCheck.org analysis is detailed and cites specific documents and expert sources.\n\nIt's also worth noting that cost-benefit analyses for regulations involve projections over decades (2027-2055) with inherent uncertainties. Different assumptions about fuel prices, vehicle adoption rates, and technological development could shift these estimates. However, the fundamental critique—that presenting only costs without",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "a0a60e05e697",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| FactCheck.org Analysis: EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings' | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** (Annenberg Public Policy Center fact-checking project) |\n| EPA Official Sources (regulatory impact analysis, fact sheets) | Referenced in article but direct URLs returned errors | N/A |\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "82e48ca5cb6e",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Verdict",
+    "text": "**The claim that the EPA's $1.3 trillion \"savings\" figure is misleading is SUPPORTED by the evidence.** The figure represents only the costs of emissions regulations while ignoring substantial benefits, including fuel savings. The EPA's own analysis, when benefits are partially included, suggests the policy repeal could result in net costs to Americans of $180 billion, not savings. The framing has been criticized by independent regulatory and economics experts as one-sided and unprecedented in its exclusion of the benefit side of the cost-benefit equation.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "f2adaaa6bd89",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "Source: FactCheck.org Analysis: EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings'. URL: https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/. Reliability: High (Annenberg Public Policy Center fact-checking project).",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "919294c64ff5",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "Referenced in article but direct URLs returned errors",
+    "section": "Key Sources",
+    "text": "Source: EPA Official Sources (regulatory impact analysis, fact sheets). URL: Referenced in article but direct URLs returned errors. Reliability: N/A.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "2662a4dd44f5",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Overview",
+    "text": "The direct URL didn't work. I've now attempted two corroborating sources with errors. Per my rules, I should not continue chasing links and should base my verdict on what I successfully read from the primary Science Daily article.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "94f046fe0ac9",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Sub-questions",
+    "text": "1. What does the study claim about people's understanding of food's environmental impact?\n2. Who conducted the research and where was it published?\n3. What specific misconceptions did the study identify?\n4. What methodology was used to reach these conclusions?\n5. Is the claim in the headline accurately supported by the study's findings?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "22781fccd41b",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Evidence Assessment",
+    "text": "The Science Daily article reports on a University of Nottingham study published in the *Journal of Cleaner Production*. The research involved 168 UK participants who were asked to sort supermarket foods into environmental impact categories. The study found that people tend to use two primary mental shortcuts when judging food's environmental impact: (1) whether food comes from animals or plants, and (2) how processed it is.\n\nThe headline claim that \"most people get food's environmental impact completely wrong\" is **partially supported but somewhat sensationalized**. The study did find \"consistent misconceptions\"—participants overestimated processed foods' impact, underestimated water-intensi",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "44501f384b91",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Supporting evidence",
+    "text": "- **Study found consistent misconceptions**: Participants overestimated processed foods' environmental harm and underestimated impact of water-intensive products like nuts (Science Daily)\n- **Beef impact underestimated**: Participants were \"surprised to learn how much higher the environmental impact of beef is compared to other meats like chicken\" (Science Daily)\n- **Peer-reviewed publication**: Research published in *Journal of Cleaner Production*, a respected environmental science journal (Science Daily)\n- **Funded research**: Study funded by UKRI's Smart Data Research UK, adding credibility (Science Daily)\n- **Novel methodology**: Described as \"the first to explore how people perceive the",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "64c8c6ae87b6",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Contradicting evidence",
+    "text": "- No directly contradicting evidence found in the source\n- However, the study acknowledges participants **did** correctly identify some patterns (e.g., animal products generally worse than plant products), suggesting understanding isn't \"completely\" wrong",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "e7cb124ae2ec",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Sample limitations**: The study included only 168 UK participants, which may not represent global populations or different cultural food contexts.\n\n2. **Headline hyperbole**: \"Completely wrong\" is journalistic exaggeration. The study shows *partial* misconceptions and reliance on oversimplified heuristics rather than total ignorance.\n\n3. **Self-reported intentions**: The claim that participants would change purchasing behavior is based on self-reported intentions, which may not translate to actual behavior change.\n\n4. **Content truncation**: The Science Daily article was cut off, potentially missing important nuances, limitations, or additional findings from the researchers.\n\n5. **Unabl",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "3684d0958255",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Key Sources",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| Science Daily - University of Nottingham Study Report | https://www.sciencedaily.com/releases/2026/03/260323005528.htm | **Medium-High** (reputable science news aggregator; summarizes peer-reviewed research but is secondary source) |\n| Journal of Cleaner Production (original study) | Not accessible | N/A |\n\n---\n\n**Verdict**: The core claim is **largely accurate but overstated**. A legitimate peer-reviewed study from the University of Nottingham did find that people hold consistent misconceptions about food's environmental impact—particularly underestimating beef and overestimating processed foods. However, \"completely wrong\" is ed",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "71039e4f0690",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Key Sources",
+    "text": "Source: Science Daily - University of Nottingham Study Report. URL: https://www.sciencedaily.com/releases/2026/03/260323005528.htm. Reliability: Medium-High (reputable science news aggregator; summarizes peer-reviewed research but is secondary source).",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "5353d230acd3",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "Not accessible",
+    "section": "Key Sources",
+    "text": "Source: Journal of Cleaner Production (original study). URL: Not accessible. Reliability: N/A.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "c403554eafc2",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Overview",
+    "text": "Excellent! I now have both sources. Let me compile my analysis.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "162dec545153",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Sub-questions",
+    "text": "1. Is there actually a $5 million prize for quantum computing in healthcare?\n2. What is the Q4Bio competition and who runs it?\n3. What are the specific requirements to win the prize?\n4. Are quantum computers currently capable of solving healthcare problems?\n5. What is the timeline for this competition/demonstration?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "d8f7245a4cbd",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Evidence Assessment",
+    "text": "The claim is **accurate but framed as a question rather than a definitive statement**. Both sources confirm the existence of a legitimate, well-funded competition called \"Quantum for Bio\" (Q4Bio), run by the nonprofit Wellcome Leap, which offers up to $10 million in challenge prizes—including a $5 million grand prize—for demonstrating quantum computing's utility in healthcare.\n\nThe MIT Technology Review article provides on-the-ground reporting from the UK's National Quantum Computing Centre, describing one competitor (Infleqtion) and their atom-based quantum computer. The article notes that six teams have reached the final stage of the 30-month competition, with the finale scheduled for Mari",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "1960c63bbf85",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Supporting evidence",
+    "text": "- **Wellcome Leap official website** confirms Q4Bio is a \"$40M + $10M\" program with the stated prize structure ($2M for 50+ qubit demonstrations, $5M grand prize for 100+ qubit solutions)\n- **MIT Technology Review** reports six teams have reached the finals, with the event scheduled for Marina del Rey, California\n- Named teams/institutions include: Infleqtion (Colorado), University of Nottingham (Jonathan D. Hirst), Stanford University (Grant Rotskoff studying ATP molecules)\n- The competition has been running for 30 months with clear technical criteria",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "4fa906095471",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Contradicting evidence",
+    "text": "- No contradicting evidence found regarding the existence or structure of the competition\n- However, experts quoted express significant doubt about whether the grand prize will be won, with insiders suggesting \"the challenge is so difficult... that much of the money could stay in Wellcome Leap's account\"",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "f1e849a5b415",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Uncertainty of success**: The headline claim frames this as a question (\"We'll soon find out\") because it remains genuinely unclear whether current quantum computers can solve meaningful healthcare problems. The $5 million prize existing doesn't mean it will be won.\n\n2. **Hybrid approach**: The article notes that current progress involves \"quantum-classical hybrid\" systems rather than pure quantum computing—combining quantum computers with traditional computers to exceed classical-only capabilities.\n\n3. **NDA restrictions**: Most Q4Bio work is unpublished and protected by NDAs, making independent verification of team progress impossible until the judges announce results.\n\n4. **Technical",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "d1b34fc4b5c9",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Key Sources",
+    "text": "Source: MIT Technology Review - \"Can quantum computers now solve health care problems?\". URL: https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/. Reliability: High - Established technology journalism outlet with on-site reporting.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "64c9c1d1787a",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://wellcomeleap.org/q4bio/",
+    "section": "Key Sources",
+    "text": "Source: Wellcome Leap Q4Bio Official Program Page. URL: https://wellcomeleap.org/q4bio/. Reliability: High - Official primary source from the organization running the competition.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "7fea8aa4230a",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Overview",
+    "text": "The second URL returned an error. Per my instructions, I will not chase additional links and will base my verdict on what I successfully read from FactCheck.org.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "add6e33d42bb",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Sub-questions",
+    "text": "1. What is the source of the $1.3 trillion figure cited by the EPA and Trump administration officials?\n2. How was this figure calculated, and what does it include?\n3. What costs, benefits, or considerations are excluded from this figure?\n4. Does the EPA's own regulatory impact analysis support or contradict the $1.3 trillion \"savings\" framing?\n5. What do independent experts say about the accuracy of this characterization?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "3c545109c070",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Evidence Assessment",
+    "text": "The FactCheck.org article provides a detailed examination of the Trump administration's claim that revoking EPA greenhouse gas emissions standards for vehicles will \"save\" Americans $1.3 trillion.\n\nAccording to the EPA's own fact sheet, this figure comprises approximately **$1.1 trillion in avoided vehicle technology costs** and **$200 billion in avoided EV charger and equipment costs** from 2027-2055. However, the critical issue identified is that this figure represents only **one side of the cost-benefit equation**.\n\nThe $1.3 trillion figure deliberately excludes:\n- **Reduced fuel costs** that consumers would have saved from more efficient vehicles\n- **Reduced maintenance costs** \n- **Heal",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "831398b09e33",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Supporting evidence",
+    "text": "- The $1.3 trillion figure does appear in EPA official communications and fact sheets\n- Administration officials (EPA Administrator Lee Zeldin, President Trump, OMB Director Vought) have repeatedly cited this figure\n- The figure is derived from the EPA's regulatory impact analysis modeling costs over 2027-2055",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "6523dd95be35",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Contradicting evidence",
+    "text": "- The $1.3 trillion only accounts for compliance costs, ignoring consumer benefits from fuel savings\n- The EPA's own analysis shows repealing the standards could **cost** Americans $180 billion when accounting for more factors (even excluding health/environmental benefits)\n- Independent regulatory and economics experts characterize the framing as \"biased and misleading\"\n- The approach of highlighting only costs in regulatory announcements is described as unprecedented by an expert",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "7eede6acc2c8",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Caveats & Missing Context",
+    "text": "- The FactCheck.org article was truncated, so some details of the EPA's full calculations may not have been captured\n- I was unable to access the EPA's original regulatory impact analysis or fact sheet directly due to URL errors\n- The full scope of what the EPA's $180 billion cost estimate includes/excludes wasn't fully detailed in the truncated text\n- Different methodological assumptions about vehicle adoption rates, fuel prices, and discount rates can significantly affect these long-term projections\n- The political context of regulatory rollbacks may influence how both the administration and critics frame these numbers",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "9ff3a07d1e06",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Verdict",
+    "text": "**The claim that the EPA's $1.3 trillion \"savings\" figure is misleading appears SUPPORTED.**\n\nBased on the evidence from FactCheck.org, the $1.3 trillion figure is technically derived from EPA's own analysis but is presented in a fundamentally misleading way. It counts only the costs of compliance (vehicle technology and EV infrastructure) while completely ignoring the benefits consumers would receive (fuel savings, lower maintenance costs). The EPA's own more complete analysis suggests the deregulation could actually **cost** Americans $180 billion. Independent experts confirm this one-sided presentation is unusual and misleading for federal rulemaking communications.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "1ed28c40b7dd",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "Source: FactCheck.org - EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings'. URL: https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/. Reliability: High - FactCheck.org is an established, nonpartisan fact-checking organization affiliated with the Annenberg Public Policy Center.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "011fc730ec3a",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Overview",
+    "text": "The corroborating URLs returned errors. Per my rules, I will not chase further links and will base my verdict on the primary source I successfully retrieved.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "ac31b92784f3",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Sub-questions",
+    "text": "1. What does the study actually claim about people's understanding of food's environmental impact?\n2. Who conducted the research and where was it published?\n3. What methodology was used to assess people's perceptions?\n4. What specific misconceptions did the study identify?\n5. Is there evidence that people's judgments differ significantly from scientific estimates?\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "51d83d07da91",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Evidence Assessment",
+    "text": "The Science Daily article provides a detailed summary of research conducted by the **University of Nottingham's School of Psychology**, published in the peer-reviewed *Journal of Cleaner Production*. The study involved **168 UK participants** who sorted supermarket foods into environmental impact categories of their own creation and then compared their judgments to scientific estimates based on life cycle assessments.\n\nThe headline claim—that \"most people get food's environmental impact completely wrong\"—is **largely supported but somewhat sensationalized**. The study found consistent patterns of misconception rather than total ignorance:\n\n- **Overestimation**: Participants overestimated the",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "57aadddb1d98",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Supporting evidence",
+    "text": "- **University of Nottingham study** with 168 participants found systematic misconceptions about food environmental impact (Science Daily)\n- Published in *Journal of Cleaner Production*, a peer-reviewed journal\n- Funded by **UKRI's Smart Data Research UK**, indicating institutional support\n- Specific misconceptions identified: overestimating processed foods' impact, underestimating beef's relative harm vs. other meats, underestimating water-intensive products like nuts\n- Participants self-reported willingness to change behavior after seeing scientific estimates, suggesting the misconceptions were meaningful\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "b857b3b67bf0",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Contradicting evidence",
+    "text": "- None found in the source material\n- The article itself does not present dissenting views or methodological criticisms\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "14f673d03d32",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Sample size and demographics**: 168 UK participants is a modest sample. Generalizing to \"most people\" worldwide is a stretch.\n2. **\"Completely wrong\" is editorial**: The study found *systematic biases* and *patterns of misconception*, not that every person was entirely incorrect about everything.\n3. **Self-reported behavior change**: The claim that participants would change purchasing behavior is based on stated intentions, not observed actions.\n4. **Missing original study**: I was unable to access the original *Journal of Cleaner Production* paper or direct university press release to verify exact figures and methodology.\n5. **UK-specific**: Food perceptions may differ across cultures ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "cc73ed80a008",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "Not accessed",
+    "section": "Key Sources",
+    "text": "Source: *Journal of Cleaner Production* (original study). URL: Not accessed. Reliability: High (peer-reviewed journal; would be the authoritative source).",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "25db2125f7a6",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Overview",
+    "text": "Excellent! I now have confirmation from the official source. Let me compile my analysis.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "4288b42e2777",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Sub-questions",
+    "text": "1. What is the Q4Bio competition and who runs it?\n2. What are the prize amounts and criteria for winning?\n3. Which teams are competing in the finals?\n4. What specific healthcare problems are being addressed?\n5. What is the current state of quantum computing capability for healthcare applications?\n6. Is this truly a test of whether quantum computers can solve healthcare problems?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "58f730d2e1f1",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Evidence Assessment",
+    "text": "The claim is **accurate and well-supported**. The MIT Technology Review article describes the Q4Bio (Quantum for Bio) competition run by Wellcome Leap, a nonprofit organization. The competition offers up to $10 million in challenge prizes, with a **$5 million grand prize** for teams that successfully demonstrate quantum algorithms solving significant real-world healthcare problems using 100+ qubits.\n\nThe article provides substantial detail: six teams have reached the finals, to be held in Marina del Rey, California. Teams include researchers from Stanford University (investigating ATP molecules), the University of Nottingham, and the company Infleqtion (using cesium atom-based quantum comput",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "3529b4a8d756",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Supporting evidence",
+    "text": "- **Wellcome Leap's official website** confirms Q4Bio is a $40M + $10M program with a $5M grand prize for quantum demonstrations on 100+ qubit systems solving healthcare problems\n- **MIT Technology Review** provides on-the-ground reporting from the UK's National Quantum Computing Centre, describing Infleqtion's cesium-atom quantum computer\n- Six finalist teams confirmed, including Stanford University and University of Nottingham researchers\n- Prize criteria verified: $2M for 50+ qubit demonstrations; $5M for 100+ qubit solutions to real-world healthcare problems that classical computers cannot solve\n- Competition timeline (30 months) and location (Marina del Rey, California) provided",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "2559c5e6c95d",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Caveats & Missing Context",
+    "text": "1. **The headline is somewhat promotional**: The question \"Can quantum computers now solve health care problems?\" implies this might be proven true, but experts quoted suggest failure is quite possible.\n\n2. **Hybrid approach**: The article reveals that success likely depends on \"quantum-classical hybrids\" rather than pure quantum computing—meaning classical computers still play a crucial role.\n\n3. **Unpublished results**: Most Q4Bio work is protected by NDAs and unpublished, making independent verification impossible until after the competition.\n\n4. **\"Quantum advantage\" is narrowly defined**: Winning requires solving problems classical computers *cannot* solve—a very high bar that may not b",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "10c7109a52c8",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Key Sources",
+    "text": "Source: MIT Technology Review - Q4Bio Article. URL: https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/. Reliability: High - Established technology publication with on-site reporting.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "1a0b2cf61b89",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://wellcomeleap.org/q4bio/",
+    "section": "Key Sources",
+    "text": "Source: Wellcome Leap Q4Bio Official Page. URL: https://wellcomeleap.org/q4bio/. Reliability: High - Primary source/official program documentation.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "736a6d2b7dd3",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Overview",
+    "text": "The URL returned an error. Based on my instructions, I should not chase dead links and should proceed with the evidence I have. The FactCheck.org article is itself an authoritative fact-checking source and provides substantial detail including references to EPA's own regulatory impact analysis.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "ff4f2869f24d",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Sub-questions",
+    "text": "1. What is the EPA's $1.3 trillion figure and what does it purport to measure?\n2. How was the $1.3 trillion calculated, and what time period does it cover?\n3. Does the $1.3 trillion figure account for both costs and benefits of the emissions standards?\n4. What do independent experts say about the framing of this figure?\n5. What does the EPA's own analysis show about the net impact of repealing the standards?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "be233548b976",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Evidence Assessment",
+    "text": "The FactCheck.org article provides a detailed examination of the EPA's $1.3 trillion \"savings\" claim. According to the article, the Trump administration has repeatedly touted this figure after the EPA revoked the 2009 endangerment finding in February 2026, which allowed regulation of greenhouse gas emissions from vehicles.\n\nThe investigation reveals that the $1.3 trillion figure represents **only the costs** of making vehicles more fuel efficient over nearly three decades (2027-2055), specifically:\n- ~$1.1 trillion in avoided vehicle technology costs\n- ~$200 billion in avoided EV charger and equipment costs\n\nCritically, this figure **does not incorporate any benefits** from the emissions sta",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "3191f1c092ad",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Supporting evidence",
+    "text": "- **EPA's own regulatory impact analysis** shows the $1.3 trillion only counts costs, not benefits (FactCheck.org)\n- **EPA's alternative calculation** shows repealing the policy could cost $180 billion when some benefits are included (FactCheck.org)\n- **Jason Schwartz (NYU)** confirms the framing omits important effects and calls it \"biased and misleading\" (FactCheck.org)\n- **Kenneth Gillingham (Yale)** notes this is unprecedented focus on only costs in a rulemaking (FactCheck.org)\n- The $1.3 trillion figure appears in EPA fact sheets, press releases, and has been cited by Administrator Lee Zeldin, President Trump, OMB Director Russell Vought, and Press Secretary Karoline Leavitt (FactCheck.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "4833a77016a8",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Contradicting evidence",
+    "text": "- No evidence was found contradicting the claim that the EPA's framing is misleading\n- The administration's position is that removing these regulations will save \"$2,400 for a new vehicle\" per family, though this does not account for offsetting fuel savings",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "574e444a77bf",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Truncated source**: The FactCheck.org article was truncated, so some additional analysis and details from the regulatory impact analysis may not have been captured.\n\n2. **Unable to verify EPA's primary documents**: The article references EPA fact sheets and regulatory impact analyses, but I was unable to directly access these primary government documents to independently verify the specific numbers.\n\n3. **Timeframe matters**: The $1.3 trillion covers nearly 30 years (2027-2055), which affects how the annual impact should be understood.\n\n4. **Different calculation methods**: The EPA's $180 billion cost figure still excludes health and environmental benefits; a full cost-benefit analysis ",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "f6f6c3882dc4",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "| Title | URL | Reliability |\n|-------|-----|-------------|\n| \"EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings'\" - FactCheck.org | https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ | **High** - FactCheck.org is a nonpartisan, award-winning fact-checking organization affiliated with the Annenberg Public Policy Center |\n\n---\n\n**Verdict**: The claim that the EPA's $1.3 trillion \"savings\" figure is misleading is **WELL-SUPPORTED**. The evidence clearly shows that this number represents only the costs of vehicle emissions standards without accounting for any corresponding benefits. The EPA's own analysis, using a more balanced approa",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "1aca9b182677",
+    "claim_id": "8e1baa46",
+    "claim_text": "EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’",
+    "source_url": "https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/",
+    "section": "Key Sources",
+    "text": "Source: \"EPA's Misleading Claim of $1.3 Trillion in Deregulatory 'Savings'\" - FactCheck.org. URL: https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/. Reliability: High - FactCheck.org is a nonpartisan, award-winning fact-checking organization affiliated with the Annenberg Public Policy Center.",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "source_metadata"
+  },
+  {
+    "chunk_id": "3e14d78d510b",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Overview",
+    "text": "I've encountered errors with the corroborating sources. Per my instructions, I will not chase further dead links and will proceed with my analysis based on the primary source I successfully retrieved.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "3beee5ae2234",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Sub-questions",
+    "text": "1. Did a scientific study actually find that people misunderstand the environmental impact of food?\n2. What institution conducted this research, and was it published in a peer-reviewed journal?\n3. What specific misconceptions did the study identify?\n4. What methodology was used in the study?\n5. Are the findings consistent with established knowledge about food's environmental impact?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "8dfa5c09a6ad",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Supporting evidence",
+    "text": "- **University of Nottingham study** (168 UK participants) found people use simplified categories that don't match scientific assessments of environmental impact\n- **Published in Journal of Cleaner Production**, a peer-reviewed journal\n- **Funded by UKRI's Smart Data Research UK**, indicating institutional credibility\n- Study used **life cycle assessment methodology** as the scientific standard for comparison\n- Lead author **Daniel Fletcher** (Postdoctoral researcher, School of Psychology) quoted with specific findings\n- Participants self-reported willingness to change behavior when shown actual environmental impacts",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "98f85fa6fbb1",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Contradicting evidence",
+    "text": "- No contradicting evidence found in the source material\n- Unable to access corroborating independent sources due to URL errors",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "474293104a26",
+    "claim_id": "d763eb04",
+    "claim_text": "Most people get food’s environmental impact completely wrong, study finds",
+    "source_url": "https://www.sciencedaily.com/releases/2026/03/260323005528.htm",
+    "section": "Caveats & Missing Context",
+    "text": "1. **Sample limitations**: The study used only 168 UK participants, which may not generalize globally. Cultural food knowledge and dietary patterns vary significantly.\n\n2. **Headline interpretation**: \"Completely wrong\" is editorial language. The study more precisely found that people use **simplified heuristics** that lead to **systematic misconceptions**, not that they are wrong about everything.\n\n3. **Partial truth in heuristics**: The animal vs. plant heuristic is not entirely wrong—animal products generally do have higher impacts. The issue is its oversimplification (e.g., not distinguishing between beef and chicken).\n\n4. **Content truncation**: The article was truncated, so some findin",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "8ce3db8074ac",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Overview",
+    "text": "Excellent! I now have both the primary source (MIT Technology Review) and corroborating information from the official source (Wellcome Leap). Let me provide my analysis.\n\n---",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "bd166b6479a3",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Sub-questions",
+    "text": "1. What is the Q4Bio competition, and who runs it?\n2. What are the prize amounts and criteria for winning?\n3. Which teams are competing and what problems are they trying to solve?\n4. Is there evidence that quantum computers can currently solve healthcare problems?\n5. What is the timeline and current status of the competition?",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "c7d4177ee240",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Evidence Assessment",
+    "text": "The claim that \"quantum computers can now solve health care problems\" is presented as a **question to be answered**, not a statement of fact—and this framing is accurate. The MIT Technology Review article describes the Quantum for Bio (Q4Bio) competition, a 30-month program run by Wellcome Leap, which has reached its final stage. Six teams will compete in Marina del Rey, California, for prizes totaling up to $10 million.\n\nThe $5 million grand prize requires teams to successfully run a quantum algorithm on 100+ qubits that solves a \"significant real-world problem in health care\" that **cannot be solved with conventional computers**—described as \"really at the very edge of doable\" by researche",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "b41ba6fa3cec",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Supporting evidence",
+    "text": "- **MIT Technology Review** confirms six teams have reached the Q4Bio finals, with the competition to be held in Marina del Rey, California\n- **Wellcome Leap official page** confirms the $5M grand prize and $2M prizes structure, with specific qubit requirements (50+ for $2M, 100+ for $5M)\n- Teams include researchers from Stanford University, University of Nottingham, and Colorado-based Infleqtion\n- Specific research applications mentioned: ATP molecule quantum properties for biological cells\n- The competition structure is designed to prove whether quantum computing can benefit human health",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "07630def465b",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Contradicting evidence",
+    "text": "- The article itself states the grand prize goal is \"really at the very edge of doable\"\n- Current quantum computers are described as \"messy and error-prone\"\n- Insiders suggest \"much of the money could stay in Wellcome Leap's account\" due to the difficulty\n- Success currently depends on **quantum-classical hybrid** approaches, not pure quantum computing\n- Much of the Q4Bio work remains unpublished and protected by NDAs, making independent verification impossible",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "1b999e5f911e",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Caveats & Missing Context",
+    "text": "The claim's headline is appropriately framed as a question (\"Can quantum computers now solve health care problems? We'll soon find out\"), not an assertion. The evidence shows this is genuinely an open question being tested through a rigorous competition with demanding criteria. \n\nKey context: \n1. \"Solving\" healthcare problems in this context means demonstrating quantum advantage over classical computers—not deploying clinical solutions\n2. The competition tests whether **current** quantum hardware can achieve meaningful results, not whether quantum computing will eventually be useful\n3. Results from the competition (scheduled for late March 2026) have not yet been announced\n4. The hybrid quan",
+    "date_slug": "2026-03-23",
+    "chunk_kind": "summary"
+  },
+  {
+    "chunk_id": "d4bed6de9be6",
+    "claim_id": "a328d89c",
+    "claim_text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+    "source_url": "https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/",
+    "section": "Key Sources",
+    "text": "Source: MIT Technology Review: \"A $5 million prize awaits proof that quantum computers can solve health care problems\". URL: https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/. Reliability: High - Established tech publication with direct reporting from the quantum computing lab.",
     "date_slug": "2026-03-23",
     "chunk_kind": "source_metadata"
   }

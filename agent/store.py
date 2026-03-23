@@ -97,6 +97,9 @@ def _chunk_research(
         content = (page.get("content", "") or "").strip()
         if not content:
             continue
+        # Skip pages that failed to fetch — don't persist error messages as evidence
+        if content.startswith("Error fetching page"):
+            continue
         for part_index, text in enumerate(_split_long_text(content), start=1):
             chunk_id = _make_id(research.claim_id, f"Fetched Source {index}.{part_index}", text)
             chunks.append(EvidenceChunk(

@@ -45,6 +45,9 @@ from .verifier import verify_verdict
 
 logger = logging.getLogger(__name__)
 
+FALLBACK_RETRIEVAL_SCORE_FLOOR = 0.2
+_ERROR_FETCH_PREFIX = "Error fetching page"
+
 # Lazily-initialised singletons — not created until first node call,
 # so API keys are guaranteed to be loaded from .env before instantiation.
 _director:   Director   | None = None
@@ -162,16 +165,17 @@ def graph_context_node(state: PipelineState) -> dict[str, Any]:
 
 def retrieve_node(state: PipelineState) -> dict[str, Any]:
     """
-    Node 6 — HybridRetriever ranks all cumulative evidence chunks per claim.
+    Node 6 — HybridRetriever ranks claim-local evidence first, then falls back
+    to the cumulative evidence store only when strong cross-claim matches exist.
     Combines TF-IDF cosine (60%) + BM25 keyword (40%), both min-max normalised.
     Uses graph_context to enrich retrieval queries across prior runs.
     """
     all_chunks = load_all_chunks(state.outputs_dir)
-    if not all_chunks:
+    has_local_chunks = any(state.evidence_chunks.get(claim.id) for claim in state.selected)
+    if not all_chunks and not has_local_chunks:
         logger.warning("[retrieve] Evidence store empty — skipping retrieval.")
         return {"retrieval_hits": {}}
 
-    retriever = HybridRetriever(all_chunks)
     retrieval_hits: dict[str, list] = {}
 
     for claim in state.selected:
@@ -181,16 +185,71 @@ def retrieve_node(state: PipelineState) -> dict[str, Any]:
         query_text = revised_query if revised_query else claim.text
         query = build_retrieval_query(query_text, graph_ctx)
         try:
-            hits = retriever.search(query, top_k=6, claim_id=claim.id)
+            local_chunks = state.evidence_chunks.get(claim.id, [])
+            local_hits = _search_chunks(local_chunks, query, claim.id, top_k=6)
+            fallback_hits = _search_chunks(all_chunks, query, claim.id, top_k=12)
+            hits = _merge_retrieval_hits(local_hits, fallback_hits, claim.id, top_k=6)
             retrieval_hits[claim.id] = hits
             logger.info(
-                "[retrieve] %d hits for claim %s (top score: %.3f)",
-                len(hits), claim.id, hits[0].hybrid_score if hits else 0.0,
+                "[retrieve] %d hits for claim %s (local=%d fallback_kept=%d top score: %.3f)",
+                len(hits),
+                claim.id,
+                len(local_hits),
+                sum(1 for hit in hits if hit.chunk.claim_id != claim.id),
+                hits[0].hybrid_score if hits else 0.0,
             )
         except Exception as exc:
             logger.error("[retrieve] Failed for claim %s: %s", claim.id, exc)
 
     return {"retrieval_hits": retrieval_hits}
+
+
+def _search_chunks(
+    chunks: list,
+    query: str,
+    claim_id: str,
+    top_k: int,
+) -> list:
+    if not chunks:
+        return []
+    return HybridRetriever(chunks).search(query, top_k=top_k, claim_id=claim_id)
+
+
+def _merge_retrieval_hits(
+    local_hits: list,
+    fallback_hits: list,
+    claim_id: str,
+    top_k: int,
+) -> list:
+    merged: list = []
+    seen_ids: set[str] = set()
+
+    for hit in local_hits:
+        chunk_id = hit.chunk.chunk_id
+        if chunk_id in seen_ids:
+            continue
+        # Drop chunks that are stored fetch-error messages (retroactive guard)
+        if hit.chunk.text.startswith(_ERROR_FETCH_PREFIX):
+            continue
+        merged.append(hit)
+        seen_ids.add(chunk_id)
+        if len(merged) >= top_k:
+            return merged
+
+    for hit in fallback_hits:
+        chunk_id = hit.chunk.chunk_id
+        if chunk_id in seen_ids:
+            continue
+        if hit.chunk.claim_id == claim_id:
+            continue
+        if hit.hybrid_score < FALLBACK_RETRIEVAL_SCORE_FLOOR:
+            continue
+        merged.append(hit)
+        seen_ids.add(chunk_id)
+        if len(merged) >= top_k:
+            break
+
+    return merged
 
 
 def verdict_node(state: PipelineState) -> dict[str, Any]:

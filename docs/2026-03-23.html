@@ -41,6 +41,12 @@
     .score-pct   { width: 2.5rem; text-align: right; color: var(--text); }
     .retry-note  { margin-top: .4rem; color: #f97316; font-size: .82rem; }
     .retrieved-text { margin-top: .35rem; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+    /* Source diversity */
+    .sources-summary { margin-top: .4rem; font-size: .82rem; color: var(--muted); }
+    .domain-tag { display: inline-block; background: #0f3460; color: var(--accent);
+                   border-radius: .3rem; padding: .1rem .45rem; margin: .1rem .2rem 0 0;
+                   font-size: .78rem; font-family: monospace; }
+    .chunk-domain { color: var(--accent); font-family: monospace; font-size: .8rem; }
   </style>
 </head>
 <body>
@@ -52,18 +58,19 @@
             </header>
             <main>
             <div class="card">
-              <div class="verdict-badge" style="background:#f97316">🟠 Mostly False</div>
+              <div class="verdict-badge" style="background:#84cc16">🟢 Mostly True</div>
               <h2 class="claim-text">"EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’"</h2>
               <p class="source">Source: <a href="https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/" target="_blank">FactCheck.org</a></p>
               <p class="confidence">Confidence: 90%</p>
-              <p class="summary">The EPA's claim of $1.3 trillion in deregulatory 'savings' is misleading because it only accounts for avoided costs without considering the benefits of the emissions standards, such as fuel savings and environmental benefits. The EPA's own analysis suggests that repealing these standards could result in a net cost to consumers.</p>
+              <p class="sources-summary">Evidence sources (2): <span class="domain-tag">factcheck.org</span><span class="domain-tag">epa.gov</span></p>
+              <p class="summary">The EPA's claim of $1.3 trillion in 'savings' from deregulation is misleading because it only accounts for the costs of vehicle emissions standards without considering the benefits. The EPA's own analysis suggests that repealing these standards could result in a net cost of $180 billion when some benefits are included. Experts criticize the framing as biased and unprecedented.</p>
               <details>
                 <summary>Key Evidence</summary>
-                <ul><li>The $1.3 trillion figure includes $1.1 trillion in avoided vehicle technology costs and $200 billion in avoided electric vehicle charger costs, but ignores benefits like fuel savings and reduced pollution.</li><li>FactCheck.org notes that the EPA's own regulatory impact analysis shows a potential net cost of $180 billion when fuel savings are considered.</li><li>Experts like Jason Schwartz and Kenneth Gillingham criticize the methodology as biased and atypical, focusing only on costs without benefits.</li></ul>
+                <ul><li>The $1.3 trillion figure represents only the costs of making vehicles more fuel efficient over 2027-2055, specifically $1.1 trillion in avoided vehicle technology costs and $200 billion in avoided EV charger costs (FactCheck.org).</li><li>The figure does not incorporate benefits such as reduced fuel costs, lower maintenance costs, health benefits, and environmental benefits (FactCheck.org).</li><li>EPA's own regulatory impact analysis shows that repealing the policy could cost $180 billion when some benefits are included (FactCheck.org).</li><li>Experts Jason Schwartz and Kenneth Gillingham criticize the framing as biased and unprecedented, focusing only on costs (FactCheck.org).</li></ul>
               </details>
               <details>
                 <summary>Retrieved Evidence Chunks</summary>
-                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.80)<div class="retrieved-text">EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’ - FactCheck.org
+                <ul><li><span class="chunk-domain">factcheck.org</span> · <strong>raw_source</strong> · Fetched Source 1.1 · score 0.78<div class="retrieved-text">EPA’s Misleading Claim of $1.3 Trillion in Deregulatory ‘Savings’ - FactCheck.org
 
 Facebook
 
@@ -104,7 +111,39 @@ Español
 Trump administration officials have claimed that they are saving Americans over $1.3 trillion by ending regulation of greenhouse gas emissions from cars and trucks. But the figure does not incorporate any benefits of the emissions standards. By one of the Environmental Protection Agency’s own calculations, getting rid of the standards could cost billions.
 
 On Feb. 12, the EPA 
-announce</div></li><li><strong>raw_source</strong> · Fetched Source 1.6 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.48)<div class="retrieved-text"> look at the EPA’s calculations and explain why the administration’s singular focus on $1.3 trillion is misleading.
+announce</div></li><li><span class="chunk-domain">epa.gov</span> · <strong>raw_source</strong> · Fetched Source 2.2 · score 0.09<div class="retrieved-text">subject
+Administrator
+Agriculture
+Air and Radiation
+Awards and Recognition
+Climate
+Compliance and Enforcement
+Emergency Response 
+Energy
+Grants
+Hazardous Waste
+Inflation Reduction Act
+Infrastructure Investment and Jobs Act
+International
+Partnerships and Stewardship
+Pesticides and Toxic Chemicals
+PFAS
+Research
+Superfund and Brownfields
+Trash and Recycling 
+Tribal
+Underground Storage Tanks
+Water
+Keyword search:
+ at the top of the 
+news releases list page
+, you can also search by keywords.  For example, enter 
+asbestos
+ to find news releases with that word in the headline and/or text of the news release.
+Learn more about EPA: 
+main topics on EPA's web site.
+Releases by date
+Filter by release ye</div></li><li><span class="chunk-domain">factcheck.org</span> · <strong>raw_source</strong> · Fetched Source 1.6 · score 0.42<div class="retrieved-text"> look at the EPA’s calculations and explain why the administration’s singular focus on $1.3 trillion is misleading.
 
 EPA’s Math 
 
@@ -116,7 +155,7 @@ Those figures are taken from the agency’s 
 regulatory impact analysis
 . The analysis modeled four different scenar
 
-[Content truncated]</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.26)<div class="retrieved-text">d
+[Content truncated]</div></li><li><span class="chunk-domain">factcheck.org</span> · <strong>raw_source</strong> · Fetched Source 1.2 · score 0.24<div class="retrieved-text">d
  
 that it was revoking
  the 2009 
@@ -135,19 +174,7 @@ frequently
 touted
  an alleged savings of $1.3 trillion.
 
-“This action will save American taxpayers over $1.3 trillion,” EPA Administrator </div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.factcheck.org/2026/03/epas-misleading-claim-of-1-3-trillion-in-deregulatory-savings/ (score 0.22)<div class="retrieved-text">Lee Zeldin 
-said
- in the press conference announcing the policy change. “What that means is lower prices, more choices, and an end of heavy-handed climate policies. With today’s announcement, American families will save over … $2,400 for a new vehicle.”
-
-In the same briefing, President Donald Trump and Russell Vought, director of the Office of Management and Budget, also mentioned the $1.3 trillion figure. White House Press Secretary Karoline Leavitt has 
-similarly referred
- to it, and in official communications, the 
-EPA
- 
-has
- also emphasized it.
-
-But the $1.3 trillion is not a net total. It only includes the added cost of making cars and trucks more fuel efficient over a period of nearly </div></li></ul>
+“This action will save American taxpayers over $1.3 trillion,” EPA Administrator </div></li></ul>
               </details>
               <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:92%;background:hsl(111,70%,45%)"></div></div><span class="score-pct">92%</span></div></div></details>
             </div>
@@ -156,14 +183,15 @@ But the $1.3 trillion is not a net total. It only includes the added cost of mak
               <h2 class="claim-text">"Most people get food’s environmental impact completely wrong, study finds"</h2>
               <p class="source">Source: <a href="https://www.sciencedaily.com/releases/2026/03/260323005528.htm" target="_blank">Science Daily — Top Science</a></p>
               <p class="confidence">Confidence: 85%</p>
-              <p class="summary">The claim that most people misunderstand the environmental impact of food is largely accurate but slightly overstated. The study by the University of Nottingham found systematic misconceptions, particularly overestimating the impact of processed foods and underestimating the impact of nuts and beef. However, the headline exaggerates by suggesting complete ignorance rather than partial understanding skewed by oversimplified heuristics.</p>
+              <p class="sources-summary">Evidence sources (1): <span class="domain-tag">sciencedaily.com</span></p>
+              <p class="summary">The claim that most people misunderstand the environmental impact of food is mostly true. A study by the University of Nottingham, published in a peer-reviewed journal, found that people often rely on simplified heuristics, leading to systematic misconceptions about food's environmental impact. However, the term 'completely wrong' in the headline is an exaggeration, as the study identified consistent patterns of misconception rather than total ignorance.</p>
               <details>
                 <summary>Key Evidence</summary>
-                <ul><li>The study was conducted by the University of Nottingham's School of Psychology and published in the Journal of Cleaner Production.</li><li>Participants were asked to sort supermarket foods into environmental impact categories, revealing misconceptions such as overestimating processed foods and underestimating nuts and beef.</li><li>The study used life-cycle assessment as a scientific benchmark, which evaluates factors like greenhouse gas emissions, land use, and water use.</li><li>Participants expressed willingness to change purchasing behavior after learning the actual impacts, indicating misconceptions are correctable with better information.</li></ul>
+                <ul><li>A study by the University of Nottingham found that people often misunderstand the environmental impact of food, relying on simple categories like 'animal vs. plant' rather than the full picture.</li><li>The study was published in the Journal of Cleaner Production, a peer-reviewed journal, lending credibility to its findings.</li><li>Participants in the study tended to overestimate the impact of processed foods and underestimate the impact of water-intensive products like nuts and the environmental damage of beef compared to other meats.</li><li>The study used a life cycle assessment methodology to evaluate the environmental impact of foods, providing a scientific standard for comparison.</li></ul>
               </details>
               <details>
                 <summary>Retrieved Evidence Chunks</summary>
-                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 1.15)<div class="retrieved-text">Most people get food’s environmental impact completely wrong, study finds | ScienceDaily
+                <ul><li><span class="chunk-domain">sciencedaily.com</span> · <strong>raw_source</strong> · Fetched Source 1.1 · score 1.44<div class="retrieved-text">Most people get food’s environmental impact completely wrong, study finds | ScienceDaily
 
 Science News
 
@@ -195,13 +223,13 @@ LinkedIN
 
 Email
 
-F</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.37)<div class="retrieved-text">ULL STORY
+F</div></li><li><span class="chunk-domain">sciencedaily.com</span> · <strong>raw_source</strong> · Fetched Source 1.2 · score 0.36<div class="retrieved-text">ULL STORY
 
 A new study reveals that many people misunderstand the true environmental impact of the foods they eat—sometimes in surprising ways. Credit: Shutterstock
 
 A new study offers fresh insight into how people judge the environmental impact of the foods they eat, and the results suggest many are getting it wrong. These misunderstandings point to a clear need for simple environmental impact labels to help guide better choices.
 
-Researchers from the University of Nottingham's School of Psychology asked 168 participants in the UK to sort a wide variety of supermarket foods into environmental impact categories of their own making. The findings revealed consistent misconceptions about which </div></li><li><strong>raw_source</strong> · Fetched Source 1.4 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.33)<div class="retrieved-text"> evaluates multiple factors, including greenhouse gas emissions (often as CO
+Researchers from the University of Nottingham's School of Psychology asked 168 participants in the UK to sort a wide variety of supermarket foods into environmental impact categories of their own making. The findings revealed consistent misconceptions about which </div></li><li><span class="chunk-domain">sciencedaily.com</span> · <strong>raw_source</strong> · Fetched Source 1.4 · score 0.29<div class="retrieved-text"> evaluates multiple factors, including greenhouse gas emissions (often as CO
 2
  equivalents), land use, and water use.
 
@@ -213,7 +241,7 @@ Participants were also shown scientific estimates of each product's environmenta
 
 Key Misconceptions About Food and Sustainability
 
-The study found that people tend to judge food impact </div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.sciencedaily.com/releases/2026/03/260323005528.htm (score 0.30)<div class="retrieved-text">foods are more or less harmful to the environment. The study was published in the 
+The study found that people tend to judge food impact </div></li><li><span class="chunk-domain">sciencedaily.com</span> · <strong>raw_source</strong> · Fetched Source 1.3 · score 0.26<div class="retrieved-text">foods are more or less harmful to the environment. The study was published in the 
 Journal of Cleaner Production
 .
 
@@ -223,53 +251,56 @@ Food production plays a major role in environmental issues, including greenhouse
 
 Scientists measure a food's environmental impact using a life cycle assessment, which tracks the entire process from production to disposal. This "cradle-to-grave" approach considers inputs such as fertilizer, water, and energy, along with outputs like emissions and waste. It</div></li></ul>
               </details>
-              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:88%;background:hsl(105,70%,45%)"></div></div><span class="score-pct">88%</span></div></div></details>
+              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div></div></details>
             </div>
             <div class="card">
-              <div class="verdict-badge" style="background:#22c55e">✅ True</div>
-              <h2 class="claim-text">"The Pentagon is planning for AI companies to train on classified data, defense official says"</h2>
-              <p class="source">Source: <a href="https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/" target="_blank">MIT Technology Review</a></p>
-              <p class="confidence">Confidence: 90%</p>
-              <p class="summary">The claim that the Pentagon is planning for AI companies to train on classified data is accurate. MIT Technology Review reports that a US defense official confirmed the Pentagon is discussing plans to allow AI models to train on classified data, which would be a new development beyond current practices. This initiative is still in the planning phase, with initial evaluations on non-classified data planned before any implementation.</p>
+              <div class="verdict-badge" style="background:#f59e0b">🟡 Mixed</div>
+              <h2 class="claim-text">"Can quantum computers now solve health care problems? We’ll soon find out."</h2>
+              <p class="source">Source: <a href="https://www.technologyreview.com/2026/03/19/1134409/a-5-million-prize-awaits-proof-that-quantum-computers-can-solve-health-care-problems/" target="_blank">MIT Technology Review</a></p>
+              <p class="confidence">Confidence: 80%</p>
+              <p class="sources-summary">Evidence sources (2): <span class="domain-tag">technologyreview.com</span><span class="domain-tag">wellcomeleap.org</span></p>
+              <p class="summary">The claim is framed as an open question about whether quantum computers can solve healthcare problems, which is accurate. The Q4Bio competition aims to test this by offering a $5 million prize for a quantum algorithm that solves a significant healthcare problem using 100+ qubits. However, current quantum computers are described as 'messy and error-prone,' and the challenge is considered extremely difficult, with insiders suggesting the prize may not be claimed. The competition's results are pending, making the claim unverified at this time.</p>
               <details>
                 <summary>Key Evidence</summary>
-                <ul><li>The Pentagon is discussing plans to set up secure environments for generative AI companies to train military-specific versions of their models on classified data, according to MIT Technology Review.</li><li>AI models like Anthropic’s Claude are already used in classified settings, but training on classified data would be a new development, presenting unique security risks.</li><li>The Pentagon intends to first evaluate model accuracy when trained on non-classified data before proceeding to classified training, as stated by a US defense official.</li></ul>
+                <ul><li>The MIT Technology Review article describes the Q4Bio competition as a test to see if quantum computers can solve healthcare problems, with a $5 million prize for a successful demonstration using 100+ qubits.</li><li>Current quantum computers are described as 'messy and error-prone,' and the challenge is considered 'at the very edge of doable,' suggesting significant uncertainty about achieving the competition's goals.</li><li>The competition relies on quantum-classical hybrid systems rather than pure quantum computing, indicating that current technology may not yet be capable of solving the posed healthcare problems independently.</li><li>Insiders suggest that 'much of the money could stay in Wellcome Leap's account' due to the difficulty of the challenge, highlighting the uncertainty of success.</li></ul>
               </details>
               <details>
                 <summary>Retrieved Evidence Chunks</summary>
-                <ul><li><strong>raw_source</strong> · Fetched Source 1.1 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.92)<div class="retrieved-text">The Pentagon is making plans for AI companies to train on classified data, defense official says | MIT Technology Review
+                <ul><li><span class="chunk-domain">technologyreview.com</span> · <strong>raw_source</strong> · Fetched Source 1.1 · score 1.05<div class="retrieved-text">Can quantum computers now solve health care problems? We'll soon find out. | MIT Technology Review
 
 Skip to Content
+EXECUTIVE SUMMARY
  
-The Pentagon is discussing plans to set up secure environments for generative AI companies to train military-specific versions of their models on classified data, 
-MIT Technology Review 
-has learned. 
+I’m standing in front of a quantum computer built out of atoms and light at the UK’s National Quantum Computing Centre on the outskirts of Oxford. On a laboratory table, a complex matrix of mirrors and lenses surrounds a Rubik’s Cube–size cell where 100 cesium atoms are suspended in grid formation by a carefully manipulated laser beam. 
  
-AI models like Anthropic’s Claude are already used to answer questions in classified settings; applications include analyzing targets in Iran. But allowing models to train on and learn from classified data would be a new development that presents unique security risks. It would mean sensitive intelligence like surveillance reports or battlefield assessmen</div></li><li><strong>raw_source</strong> · Fetched Source 1.4 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.47)<div class="retrieved-text">used computer vision models, an older form of AI, to identify objects in images and footage it collects from drones and airplanes, and federal agencies have 
-awarded contracts
- to companies to train AI models on such content. And AI companies building large language models (LLMs) and chatbots have created versions of their models fine-tuned for government work, like Anthropic’s Claude Gov, which are designed to operate across more languages and in secure environments. But the official’s comments are the first indication that AI companies building LLMs, like OpenAI and xAI, could train government-specific versions of their models directly on classified data.
+The cesium atom setup is so compact that I could pick it up, carry it out of the lab, and put it on the backseat of my car to take home. I’d be unlikely to get very far, though. It’s small but powerful—and so it’s very valu</div></li><li><span class="chunk-domain">wellcomeleap.org</span> · <strong>raw_source</strong> · Fetched Source 2.1 · score 0.30<div class="retrieved-text">Q4Bio | Wellcome Leap: Unconventional Projects. Funded at Scale.
+
  
 
-Aalok Mehta, who directs the Wa</div></li><li><strong>raw_source</strong> · Fetched Source 1.2 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.46)<div class="retrieved-text">ts could become embedded into the models themselves, and it would bring AI firms into closer contact with classified data than before. 
- 
- 
-Training versions of AI models on classified data is expected to make them more accurate and effective in certain tasks, according to a US defense official who spoke on background with 
-MIT Technology Review
-. The news comes as demand for more powerful models is high: The Pentagon has reached agreements with OpenAI and Elon Musk’s xAI to operate their models in classified settings and is implementing a new 
-agenda
- to become an “an ‘AI-first’ warfighting force” as the conflict with Iran escalates. (The Pentagon did not comment on its AI training plans as</div></li><li><strong>raw_source</strong> · Fetched Source 1.3 · https://www.technologyreview.com/2026/03/17/1134351/the-pentagon-is-planning-for-ai-companies-to-train-on-classified-data-defense-official-says/ (score 0.45)<div class="retrieved-text"> of publication time.)
- 
-Training would be done in a secure data center that’s accredited to host classified government projects, and where a copy of an AI model is paired with classified data, according to two people familiar with how such operations work. Though the Department of Defense would remain the owner of the data, personnel from AI companies might in rare cases access the data if they have appropriate security clearance, the official said. 
  
 
-Before allowing this new training, though, the official said, the Pentagon intends to evaluate how accurate and effective models are when trained on nonclassified data, like commercially available satellite imagery. 
+$40M + $10M PROGRAM
  
-The military has long </div></li></ul>
+
+Q4Bio
+ 
+
+									What if we could develop new algorithms that deliver quantum advantage for health?								
+
+Quantum for Bio (Q4Bio) is a $40M +$10M Supported Challenge Program aimed at accelerating the applications of quantum computing in human health. The program is focused on identifying, developing, and demonstrating biology and health applications that will benefit from the quantum computers expected to emerge in the next 3-5 years. The Q4Bio Supported Challenge Program seeks to co-develop health applications and new quantum computing algorithms that would enable early optimizations with emer</div></li><li><span class="chunk-domain">technologyreview.com</span> · <strong>raw_source</strong> · Fetched Source 1.4 · score 0.63<div class="retrieved-text"> a health care problem that can’t be solved with conventional computers—a tough task.
+ 
+
+Despite the scale of the challenge, most of the teams think some of this money could be theirs. “I think we’re in with a good shout,” says Jonathan D. Hirst, a computational chemist at the University of Nottingham, UK. “We’re very firmly within the criteria for the $2 million prize,” says Stanford University’s Grant Rotskoff, whose collaboration is investigating the quantum properties of the ATP molecule that powers biological cells. 
+ 
+The grand prize is perhaps less of a sure thing. “This is really at the very edge of doable,” Rotskoff says. Insiders say the challenge is so difficult, given the state o</div></li><li><span class="chunk-domain">technologyreview.com</span> · <strong>raw_source</strong> · Fetched Source 1.3 · score 0.44<div class="retrieved-text">sing and improving the performance of conventional (also called classical) computers in tandem, creating a quantum-classical hybrid that can exceed what’s possible on classical machines by themselves.
+ 
+ 
+There are two prize categories. A prize of $2 million will go to any and all teams that can run a significantly useful health care algorithm on computers with 50 or more qubits (a qubit is the basic processing unit in a quantum computer). To win the $5 million grand prize, a team must successfully run a quantum algorithm that solves a significant real-world problem in health care, and the work must use 100 or more qubits. Winners have to meet strict performance criteria, and they must solve</div></li></ul>
               </details>
-              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:92%;background:hsl(111,70%,45%)"></div></div><span class="score-pct">92%</span></div></div></details>
+              <details class="verifier-details"><summary>Quality Scores (LLM-as-a-Judge)</summary><div class="scores"><div class="score-row"><span class="score-label">Groundedness</span><div class="score-track"><div class="score-fill" style="width:90%;background:hsl(108,70%,45%)"></div></div><span class="score-pct">90%</span></div><div class="score-row"><span class="score-label">Citation</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">No Contradiction</span><div class="score-track"><div class="score-fill" style="width:100%;background:hsl(120,70%,45%)"></div></div><span class="score-pct">100%</span></div><div class="score-row"><span class="score-label">No Assumption</span><div class="score-track"><div class="score-fill" style="width:80%;background:hsl(96,70%,45%)"></div></div><span class="score-pct">80%</span></div><div class="score-row"><span class="score-label">Overall</span><div class="score-track"><div class="score-fill" style="width:88%;background:hsl(105,70%,45%)"></div></div><span class="score-pct">88%</span></div></div></details>
             </div></main>
             <footer>
-              Generated 2026-03-23T11:33:56Z · Powered by Claude + GPT-4o
+              Generated 2026-03-23T14:22:39Z · Powered by Claude + GPT-4o
             </footer>
 </body>
 </html>

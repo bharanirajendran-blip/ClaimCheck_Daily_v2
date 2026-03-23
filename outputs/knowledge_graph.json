@@ -34,6 +34,39 @@
     {
       "type": "source",
       "id": "technologyreview.com"
+    },
+    {
+      "type": "source",
+      "id": "epa.gov"
+    },
+    {
+      "type": "source",
+      "id": "nytimes.com"
+    },
+    {
+      "type": "source",
+      "id": "nottingham.ac.uk"
+    },
+    {
+      "type": "source",
+      "id": "sciencedirect.com"
+    },
+    {
+      "type": "claim",
+      "text": "Can quantum computers now solve health care problems? We’ll soon find out.",
+      "id": "a328d89c"
+    },
+    {
+      "type": "source",
+      "id": "wellcomeleap.org"
+    },
+    {
+      "type": "source",
+      "id": "reuters.com"
+    },
+    {
+      "type": "source",
+      "id": "phys.org"
     }
   ],
   "links": [
@@ -44,8 +77,29 @@
     },
     {
       "rel": "CITES",
+      "source": "8e1baa46",
+      "target": "epa.gov"
+    },
+    {
+      "rel": "CITES",
+      "source": "8e1baa46",
+      "target": "nytimes.com"
+    },
+    {
+      "rel": "CITES",
+      "source": "8e1baa46",
+      "target": "reuters.com"
+    },
+    {
+      "rel": "CITES",
       "source": "d2a63ebd",
       "target": "technologyreview.com"
+    },
+    {
+      "rel": "RELATED_TO",
+      "via": "technologyreview.com",
+      "source": "d2a63ebd",
+      "target": "a328d89c"
     },
     {
       "rel": "SUPPORTS",
@@ -58,6 +112,21 @@
       "target": "sciencedaily.com"
     },
     {
+      "rel": "CITES",
+      "source": "d763eb04",
+      "target": "nottingham.ac.uk"
+    },
+    {
+      "rel": "CITES",
+      "source": "d763eb04",
+      "target": "sciencedirect.com"
+    },
+    {
+      "rel": "CITES",
+      "source": "d763eb04",
+      "target": "phys.org"
+    },
+    {
       "rel": "SUPPORTS",
       "source": "sciencedaily.com",
       "target": "d763eb04"
@@ -66,6 +135,56 @@
       "rel": "SUPPORTS",
       "source": "technologyreview.com",
       "target": "d2a63ebd"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "technologyreview.com",
+      "target": "a328d89c"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "epa.gov",
+      "target": "8e1baa46"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "nytimes.com",
+      "target": "8e1baa46"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "nottingham.ac.uk",
+      "target": "d763eb04"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "sciencedirect.com",
+      "target": "d763eb04"
+    },
+    {
+      "rel": "CITES",
+      "source": "a328d89c",
+      "target": "technologyreview.com"
+    },
+    {
+      "rel": "CITES",
+      "source": "a328d89c",
+      "target": "wellcomeleap.org"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "wellcomeleap.org",
+      "target": "a328d89c"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "reuters.com",
+      "target": "8e1baa46"
+    },
+    {
+      "rel": "SUPPORTS",
+      "source": "phys.org",
+      "target": "d763eb04"
     }
   ]
 }
