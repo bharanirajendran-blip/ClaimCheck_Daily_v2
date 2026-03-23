@@ -184,6 +184,8 @@ python run.py --outputs-dir my_outputs  # custom output directory
 | `outputs/evidence_store.json` | Cumulative chunked evidence (grows across runs) |
 | `outputs/knowledge_graph.json` | Persistent claim-source graph (grows across runs) |
 
+Manual `--claim` runs write the same artifact types to `docs_manual/` and `outputs_manual/` — the daily `docs/` and `outputs/` directories are never touched.
+
 ```bash
 open docs/$(date +%Y-%m-%d).html      # macOS — open today's report
 ```
